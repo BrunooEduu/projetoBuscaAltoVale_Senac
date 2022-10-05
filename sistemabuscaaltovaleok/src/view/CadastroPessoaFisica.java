@@ -52,7 +52,7 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 26)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 51));
         jLabel1.setText("Cadastre-se Aqui:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -101,7 +101,7 @@ public class CadastroPessoaFisica extends javax.swing.JFrame {
         jLabel7.setText("Adicione uma Foto de Perfil:");
 
         jLabel8.setFont(new java.awt.Font("Cambria", 1, 22)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel8.setForeground(new java.awt.Color(0, 0, 51));
         jLabel8.setText("Dados para Login:");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
