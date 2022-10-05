@@ -1,10 +1,12 @@
 CREATE TABLE public.tbcadastropessoafisica (
-	fisicocodigo serial NOT NULL,
+	fisicocodigo serial NOT null,
 	nomecompleto varchar(100) NOT NULL,
 	cpf int4 NOT NULL,
 	emailfisico varchar(100) NOT NULL,
 	senhafisico varchar(100) NOT NULL,
-	telefonefisico varchar(25) NOT NULL
+	telefonefisico varchar(25) NOT null,
+	CONSTRAINT pk_tbcadastropessoafisica PRIMARY KEY (fisicocodigo, cpf, emailfisico)
+	
 );
 
 insert into tbcadastropessoafisica(
