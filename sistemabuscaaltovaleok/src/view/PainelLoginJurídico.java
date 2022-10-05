@@ -11,7 +11,7 @@ import java.awt.Container;
  * @author Usuario
  */
 public class PainelLoginJurídico extends javax.swing.JFrame {
-Container container = this.getContentPane();
+
     /**
      * Creates new form PainelLoginJurídico
      */
