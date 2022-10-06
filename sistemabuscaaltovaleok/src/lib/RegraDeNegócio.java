@@ -16,18 +16,18 @@
 //                Botao de sair 
 //
 //
-//        Telas de cadastro (juridico e fisico)
+ //      Telas de cadastro (juridico e fisico)
 //            Cadastro fisico
-//                Nome completo
-//                cpf
-//                Localização
-//                    Cidade
-//                    Estado
-//                email
-//                senha
-//                Cancelar
-//                Confirmar
-//                Ir para tela de login fisico
+//                Nome completo ok
+//                cpf ok
+//                Localização ok
+//                    Cidade ok
+//                    Estado ok
+//                email ok 
+//                senha ok
+//                Cancelar ok 
+//                Confirmarok
+//                Ir para tela de login fisico OK
 //
 //            Cadastro juridico
 //                Razão Social
@@ -62,20 +62,21 @@
 //
 //
 //    Tela de painel de Cliente 
-//        Consultar as empresas 
-//            Razão Social
+//        Consultar as empresas ok
+//            Razão Social ok 
 //            E-mail
 //            Telefone
-//            Área de atuação
+//            Área de atuação ok
+    //          vagas disponíveis ok
 //            
-//        Alterar o cadastro
+//        Alterar o cadastro ok
 //        
-//        Excluir o cadastro
+//        Excluir o cadastro ok
 //            
-//        Se inscrever para vagas
+//       vagas cadastradas ok
 //            
-//        Sair do sistema 
-//        
+//        Sair do sistema ok
+//        ir para login ok
 //
 //    Tela de painel de empresas
 //        Consultar pessoas que se inscreveram
