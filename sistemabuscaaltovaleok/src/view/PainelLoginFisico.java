@@ -15,6 +15,7 @@ public class PainelLoginFisico extends javax.swing.JFrame {
      */
     public PainelLoginFisico() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

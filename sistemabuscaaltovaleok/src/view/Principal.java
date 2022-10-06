@@ -15,8 +15,12 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
-
+    
+        PainelLoginJuridico lgtJ = new PainelLoginJuridico();
+        
+        PainelLoginFisico lgtF = new PainelLoginFisico();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,21 +30,73 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem3 = new javax.swing.JRadioButtonMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuBar4 = new javax.swing.JMenuBar();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
+        btnSair = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        btnLoginJuridico = new javax.swing.JMenu();
-        btnLoginFisico = new javax.swing.JMenu();
+        btnLoginJuridico = new javax.swing.JRadioButtonMenuItem();
+        btnLoginFisico = new javax.swing.JRadioButtonMenuItem();
         jMenu2 = new javax.swing.JMenu();
         btnCadastrarJuridico = new javax.swing.JMenu();
         btnCadastrarFisico = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         btnLoginAdm = new javax.swing.JMenu();
-        btnSair = new javax.swing.JMenu();
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+
+        jRadioButtonMenuItem2.setSelected(true);
+        jRadioButtonMenuItem2.setText("jRadioButtonMenuItem2");
+
+        jRadioButtonMenuItem3.setSelected(true);
+        jRadioButtonMenuItem3.setText("jRadioButtonMenuItem3");
+
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
+
+        jMenu5.setText("Edit");
+        jMenuBar2.add(jMenu5);
+
+        jMenu6.setText("File");
+        jMenuBar3.add(jMenu6);
+
+        jMenu7.setText("Edit");
+        jMenuBar3.add(jMenu7);
+
+        jMenu8.setText("File");
+        jMenuBar4.add(jMenu8);
+
+        jMenu9.setText("Edit");
+        jMenuBar4.add(jMenu9);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Login");
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
+        jMenu1.setText("Login");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
+
+        btnLoginJuridico.setSelected(true);
         btnLoginJuridico.setText("Pessoa Jurídica");
         btnLoginJuridico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +105,13 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(btnLoginJuridico);
 
+        btnLoginFisico.setSelected(true);
         btnLoginFisico.setText("Pessoa Física");
+        btnLoginFisico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginFisicoActionPerformed(evt);
+            }
+        });
         jMenu1.add(btnLoginFisico);
 
         jMenuBar1.add(jMenu1);
@@ -71,37 +133,43 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(btnSair);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(339, Short.MAX_VALUE)
+                .addComponent(btnSair)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(233, Short.MAX_VALUE)
+                .addComponent(btnSair)
+                .addGap(22, 22, 22))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void btnLoginJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginJuridicoActionPerformed
+        lgtJ.setVisible(true);
+    }//GEN-LAST:event_btnLoginJuridicoActionPerformed
+
+    private void btnLoginFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginFisicoActionPerformed
+        lgtF.setVisible(true);
+    }//GEN-LAST:event_btnLoginFisicoActionPerformed
+
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
-
-    private void btnLoginJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginJuridicoActionPerformed
-        
-    }//GEN-LAST:event_btnLoginJuridicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,12 +210,24 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu btnCadastrarFisico;
     private javax.swing.JMenu btnCadastrarJuridico;
     private javax.swing.JMenu btnLoginAdm;
-    private javax.swing.JMenu btnLoginFisico;
-    private javax.swing.JMenu btnLoginJuridico;
-    private javax.swing.JMenu btnSair;
+    private javax.swing.JRadioButtonMenuItem btnLoginFisico;
+    private javax.swing.JRadioButtonMenuItem btnLoginJuridico;
+    private javax.swing.JButton btnSair;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuBar jMenuBar4;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
     // End of variables declaration//GEN-END:variables
 }
