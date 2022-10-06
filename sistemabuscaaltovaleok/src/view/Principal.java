@@ -33,9 +33,6 @@ public class Principal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         btnCadastrarJuridico = new javax.swing.JMenu();
         btnCadastrarFisico = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        btnConsultaJuridico = new javax.swing.JMenu();
-        btnConsultaFisico = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         btnLoginAdm = new javax.swing.JMenu();
         btnSair = new javax.swing.JMenu();
@@ -66,16 +63,6 @@ public class Principal extends javax.swing.JFrame {
         jMenu2.add(btnCadastrarFisico);
 
         jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Consultar");
-
-        btnConsultaJuridico.setText("Pessoa Jurídica");
-        jMenu3.add(btnConsultaJuridico);
-
-        btnConsultaFisico.setText("Pessoa Física");
-        jMenu3.add(btnConsultaFisico);
-
-        jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Administrador");
 
@@ -113,7 +100,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnLoginJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginJuridicoActionPerformed
-        jur.setVisible(true);
+        
     }//GEN-LAST:event_btnLoginJuridicoActionPerformed
 
     /**
@@ -154,15 +141,12 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu btnCadastrarFisico;
     private javax.swing.JMenu btnCadastrarJuridico;
-    private javax.swing.JMenu btnConsultaFisico;
-    private javax.swing.JMenu btnConsultaJuridico;
     private javax.swing.JMenu btnLoginAdm;
     private javax.swing.JMenu btnLoginFisico;
     private javax.swing.JMenu btnLoginJuridico;
     private javax.swing.JMenu btnSair;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
