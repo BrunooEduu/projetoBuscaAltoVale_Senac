@@ -1,12 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
-
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author guilherme.schroder
@@ -14,7 +6,7 @@ import javax.swing.JOptionPane;
 public class CadastroFisico extends javax.swing.JFrame {
 
     PainelLoginFisico loginFisico = new PainelLoginFisico();
-    
+
     public CadastroFisico() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -27,9 +19,7 @@ public class CadastroFisico extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     
-  
-    
-    
+
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -299,8 +289,8 @@ public class CadastroFisico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-       
-                                         
+
+
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
@@ -308,12 +298,12 @@ public class CadastroFisico extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField2ActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        
+
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnLoginFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginFisicoActionPerformed
         loginFisico.setVisible(true);
-        
+
     }//GEN-LAST:event_btnLoginFisicoActionPerformed
 
     private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
@@ -327,7 +317,7 @@ public class CadastroFisico extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -355,9 +345,9 @@ public class CadastroFisico extends javax.swing.JFrame {
             }
         });
     }
-        
 
- 
+
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -398,7 +388,7 @@ public class CadastroFisico extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
  }
-        
-        
-     
+
+
+
 
