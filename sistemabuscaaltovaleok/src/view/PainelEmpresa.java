@@ -15,6 +15,7 @@ public class PainelEmpresa extends javax.swing.JFrame {
      */
     public PainelEmpresa() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

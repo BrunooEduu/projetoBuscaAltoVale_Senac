@@ -1,24 +1,34 @@
-CREATE TABLE public.tbcadastropessoafisica (
-	fisicocodigo serial NOT null,
-	nomecompleto varchar(100) NOT NULL,
-	cpf int4 NOT NULL,
-	emailfisico varchar(100) NOT NULL,
-	senhafisico varchar(100) NOT NULL,
-	telefonefisico varchar(25) NOT null,
-	CONSTRAINT pk_tbcadastropessoafisica PRIMARY KEY (fisicocodigo, cpf, emailfisico)
-	
+CREATE TABLE public.tbpessoafisica (
+	fiscodigo serial NOT null,
+	fisnome varchar(100) NOT NULL,
+	fiscpf varchar(20) NOT NULL,
+	fisemail varchar(100) NOT NULL,
+	fissenha varchar(100) NOT NULL,
+	fistelefone varchar(25) NOT null,
+	fiscidade varchar(100) not null,
+	fisestado varchar(100) not null,
+	CONSTRAINT pk_tbpessoafisica PRIMARY KEY (fiscodigo, fiscpf, fisemail)
 );
 
-insert into tbcadastropessoafisica(
-	nomecompleto,
-	cpf,
-	emailfisico,
-	senhafisico,
-	telefonefisico)values (
-		'Bruno',
-		'0515441616',
-		'bruno@email.com',
-		'123',
-		'473525-1512'
-	);
 
+CREATE TABLE public.tbpessoajuridica (
+	jurcodigo serial NOT null,
+	jurrazaosocial varchar(100) NOT NULL,
+	jurcnpj varchar(20) NOT NULL,
+	juremail varchar(100) NOT NULL,
+	jursenha varchar(100) NOT NULL,
+	jurtelefone varchar(25) NOT null,
+	jurcidade varchar(100) not null,
+	jurestado varchar(100) not null,
+	jurdescricao text not null,
+	juratuacao varchar(100) not null,
+	CONSTRAINT pk_tbpessoajuridica PRIMARY KEY (jurcodigo, jurcnpj, juremail)
+);
+
+
+CREATE TABLE public.tbadministrador (
+	admcodigo serial NOT null,
+	admnome varchar(100) NOT NULL,
+	admsenha varchar(100) not null,
+	CONSTRAINT pk_tbadministrador PRIMARY KEY (admcodigo, admnome)
+);

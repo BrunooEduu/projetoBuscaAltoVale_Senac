@@ -15,6 +15,7 @@ public class PainelLoginAdministrador extends javax.swing.JFrame {
      */
     public PainelLoginAdministrador() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

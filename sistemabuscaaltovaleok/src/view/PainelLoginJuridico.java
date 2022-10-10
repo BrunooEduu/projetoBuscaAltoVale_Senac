@@ -15,6 +15,9 @@ public class PainelLoginJuridico extends javax.swing.JFrame {
     /**
      * Creates new form PainelLoginJurídico
      */
+    
+    PainelEmpresa pnEmpresa = new PainelEmpresa();
+    
     public PainelLoginJuridico() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -156,7 +159,7 @@ public class PainelLoginJuridico extends javax.swing.JFrame {
     }//GEN-LAST:event_edtSenhaJuridicoActionPerformed
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        // TODO add your handling code here:
+        pnEmpresa.setVisible(true);
     }//GEN-LAST:event_btnOkActionPerformed
 
     /**

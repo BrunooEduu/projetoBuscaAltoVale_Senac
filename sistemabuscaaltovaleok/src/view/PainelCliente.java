@@ -16,6 +16,7 @@ public class PainelCliente extends javax.swing.JFrame {
      */
     public PainelCliente() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -44,6 +45,7 @@ public class PainelCliente extends javax.swing.JFrame {
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(465, 550));
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -83,10 +85,9 @@ public class PainelCliente extends javax.swing.JFrame {
         getContentPane().add(jButton6);
         jButton6.setBounds(220, 440, 93, 30);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\guilherme.schroder\\Desktop\\amanda Projeto BuscaJobs\\Statuario-White-Marble.jpg")); // NOI18N
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(-350, -30, 1538, 570);
+        jLabel6.setBounds(-350, -30, 34, 570);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

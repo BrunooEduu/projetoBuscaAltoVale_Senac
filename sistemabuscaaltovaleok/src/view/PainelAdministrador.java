@@ -10,9 +10,9 @@ package view;
  */
 public class PainelAdministrador extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PainelAdministrador
-     */
+   
+        //CadastroFisico 
+    
     public PainelAdministrador() {
         initComponents();
     }
@@ -46,6 +46,11 @@ public class PainelAdministrador extends javax.swing.JFrame {
         jLabel3.setText("Clientes");
 
         btnAdicionarFisico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Knob Add.png"))); // NOI18N
+        btnAdicionarFisico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarFisicoActionPerformed(evt);
+            }
+        });
 
         btnConsultarFisico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Knob Search.png"))); // NOI18N
         btnConsultarFisico.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +146,10 @@ public class PainelAdministrador extends javax.swing.JFrame {
     private void btnConsultarFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarFisicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsultarFisicoActionPerformed
+
+    private void btnAdicionarFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarFisicoActionPerformed
+        
+    }//GEN-LAST:event_btnAdicionarFisicoActionPerformed
 
     /**
      * @param args the command line arguments
