@@ -16,7 +16,7 @@ public class PainelLoginJuridico extends javax.swing.JFrame {
      * Creates new form PainelLoginJurídico
      */
     
-    PainelEmpresa pnEmpresa = new PainelEmpresa();
+    PainelPessoaJuridica pnEmpresa = new PainelPessoaJuridica();
     
     public PainelLoginJuridico() {
         initComponents();
