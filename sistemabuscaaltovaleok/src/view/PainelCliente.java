@@ -32,13 +32,13 @@ public class PainelCliente extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         jTextField3.setText("jTextField3");
 
@@ -56,38 +56,35 @@ public class PainelCliente extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("Consultar Empresas");
         getContentPane().add(jButton1);
-        jButton1.setBounds(156, 132, 153, 46);
-
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setText("Vagas Cadastradas");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(156, 196, 153, 46);
+        jButton1.setBounds(150, 150, 153, 46);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setText("Excluir Cadastro");
         getContentPane().add(jButton3);
-        jButton3.setBounds(156, 260, 153, 46);
+        jButton3.setBounds(150, 270, 153, 46);
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setText("Alterar Cadastro");
         getContentPane().add(jButton4);
-        jButton4.setBounds(156, 324, 153, 46);
+        jButton4.setBounds(150, 210, 153, 46);
 
         jButton5.setText("Sair do Sistema");
         getContentPane().add(jButton5);
-        jButton5.setBounds(320, 440, 105, 30);
+        jButton5.setBounds(320, 400, 105, 30);
 
         jLabel1.setText("Busca Job's");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(370, 10, 73, 14);
 
-        jButton6.setText("Ir para Login");
+        jButton6.setText("Voltar");
         getContentPane().add(jButton6);
-        jButton6.setBounds(220, 440, 93, 30);
+        jButton6.setBounds(220, 400, 61, 30);
 
         jLabel6.setText("jLabel6");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(-350, -30, 34, 570);
+        getContentPane().add(jSeparator1);
+        jSeparator1.setBounds(190, 100, 50, 10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -129,7 +126,6 @@ public class PainelCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -137,6 +133,7 @@ public class PainelCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
