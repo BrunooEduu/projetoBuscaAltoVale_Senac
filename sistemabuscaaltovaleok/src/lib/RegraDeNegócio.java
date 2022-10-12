@@ -1,114 +1,123 @@
+//REGRA DE NEGÓCIOS – PROJETO BUSCA JOB’S
 //
-//    #Regra de negócios:
+//Azul = Telas
+//Vermelho = Sub Telas
+//Preto = Funções
 //
-//    Tela principal
-//        Telas de login (juridico e fisico)
-//            login fisico 
-//                CPF ou Email e senha
-//                Botão de cadastrar a coonta
-//                Botao de entrar (ir para o painel de clientes)
-//                Botão de sair
+//Tela Principal
+//Botões de: Fazer Login, Cadastrar-se, 
+//Painel Administrador, Sair.
+//	Tela de Login = Físico e Jurídico:
+//		CPF/CNPJ e Senha
+//		Botões de: Entrar, voltar e sair.
 //
-//            login juridico
-//                CNPJ ou Email e senha
-//                Botão de ir cadastrar a conta
-//                Botao de entrar (ir para painel de empresa)
-//                Botao de sair 
+//Tela de Cadastro
+//Botões de: Pessoa Física ou Jurídica,
+//Voltar e sair.
 //
+//	Cadastro Físico:
+//		Nome Completo, CPF,
+//		Localização (cidade e estado), telefone
+//		Anexar currículo, E-mail, senha, confirma e-mail,
+//		Confirma senha.
 //
- //      Telas de cadastro (juridico e fisico)
-//            Cadastro fisico
-//                Nome completo ok
-//                cpf ok
-//                Localização ok
-//                    Cidade ok
-//                    Estado ok
-//                email ok 
-//                senha ok
-//                Cancelar ok 
-//                Confirmarok
-//                Ir para tela de login fisico OK
+//		Botões de: Confirmar, voltar e sair.
 //
-//            Cadastro juridico
-//                Razão Social
-//                CNPJ
-//                Localização
-//                    Cidade
-//                    Estado
-//                email
-//                senha
-//                descrição
-//                area de atuação
-//                Cancelar
-//                Confirmar
-//                Ir para tela de login juridico
+//	Cadastro Jurídico:
+//              Razão Social, CNPJ, Localização (cidade e estado), telefone, e-mail, Senha, Descrição/vagas disponíveis, Área de Atuação. 
 //
-//          
+//              Botões de: Confirmar, voltar e sair.
 //
+//Painel Login Administrador
+//Código do administrador e Senha
+//Botões de: Entrar, voltar e sair.
 //
-//
-//        Tela de Administrador
-//            login de adm (leva para o painel de adm)
-//
-//        Sair (Fechar o sistema)
-//
-//       
-//
-//
-//
-//
-//
-//
-//
-//
-//    Tela de painel de Cliente 
-//        Consultar as empresas ok
-//            Razão Social ok 
-//            E-mail
-//            Telefone
-//            Área de atuação ok
-    //          vagas disponíveis ok
-//            
-//        Alterar o cadastro ok
-//        
-//        Excluir o cadastro ok
-//            
-//       vagas cadastradas ok
-//            
-//        Sair do sistema ok
-//        ir para login ok
-//
-//    Tela de painel de empresas
-//        Consultar pessoas que se inscreveram
-//            Nome Completo
-//            Email
-//            Telefone
-//
-//        Sair do sistema
-//
-//        Alterar o cadastro
-//
-//        Excluir o cadastro
-//
-//
-//    Tela de administrador
-//        Consultar todos os dados de empresas e clientes
-//        Alterar cadastro de empresa ou cliente pelo codigo
-//        Excluir cadastro de empresa ou cliente pelo codigo
-//        Adicionar cadastro de empresa ou cliente pelo codigo
-//
-//    Sair
-//        Sai do sistema
+//	Tela Administrador:
+//		Botões de: Editar Cadastro, Excluir Cadastro,
+//		Consultar Cadastro, Adicionar Cadastro.
+//		
+//		Voltar e sair.
+//	Editar Cadastro:
+//		Inserir o CPF/CNPJ 
+//		Botões de: confirmar, cancelar.
+//	Excluir Cadastro:
+//		CPF ou CNPJ
+//		Listar campo automático de razão social ou nome
+//		Botões de: excluir, cancelar.
+//	Consultar Cadastro:
+//		CPF ou CNPJ 
+//		Abre tabela com as informações de cpf ou cnpj
+//		Botões de: Voltar.
+//			Tabela CPF
+//				Colunas:
+//					Código
+//					Nome
+//					CPF
+//					E-mail
+//					Telefone
+//				Botões de voltar.
+//				Campo pesquisar um text field que após 
+//				dar enter, lista o cadastro que foi digitado.
+//           		Tabela CNPJ
+//				Colunas:
+//					Código
+//					Razão Social
+//					CNPJ
+//					E-mail
+//					Telefone
+//				Botões de voltar.
+//				Campo pesquisar um text field que após 
+//				dar enter, lista o cadastro que foi digitado.
 //
 //
 //
+//Adicionar Cadastro 
+//	Físico = Tela de cadastro físico
+//	Jurídico = Tela de cadastro Jurídico
+//
+//	Botões de Voltar
 //
 //
-//        #Banco de dados
+//Painel Clientes
+//Nome da Pessoa (ver se dá), consultar empresas,
+//Alterar o cadastro, excluir o cadastro
+//Botões de: voltar (login) e sair.
+//	Alterar o Cadastro:
+//		Tela de cadastro
+//	Excluir Cadastro:
+//		Informe CPF 
+//		Botões de: confirmar, voltar.
+//	Consultar Empresas:
+//		Listar empresas cadastradas.
+//		Conter: razão social, CNPJ, cidade, 
+//		Telefone, e-mail, vagas disponíveis.
 //
-//     
+//			Cadastre-se Agora:
+//				Informar o CNPJ
+//				Puxar automaticamente a Razão Social
+//				Botão de Cadastrar
+//					Vaga cadastrada com sucesso!
 //
-//        
-//    
+//		Botões de: Voltar.
 //
-//    
+//
+//Painel Empresas
+//Nome da Empresa (ver se dá), consultar pessoas inscritas,
+//Alterar o cadastro, excluir o cadastro.
+//Botões de: voltar (login) e sair.
+//	Alterar o Cadastro:
+//		Abre tela de cadastro
+//		
+//	Excluir Cadastro:
+//		Informe o Cnpj
+//		Botões de: confirmar e sair 
+//
+//	Consultar Pessoas Inscritas
+//		Conter: Nome completo, cidade, estado, currículo,
+//CPF, telefone e E-mail 
+//		Botões de: voltar e sair.
+//
+//
+//
+//
+//
