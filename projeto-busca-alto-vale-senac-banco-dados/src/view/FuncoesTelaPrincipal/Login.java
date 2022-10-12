@@ -4,7 +4,7 @@
  */
 package view.FuncoesTelaPrincipal;
 
-import view.PessoaFísica.PainelPessoaFisica;
+import view.PessoaFisica.PainelPessoaFisica;
 
 /**
  *

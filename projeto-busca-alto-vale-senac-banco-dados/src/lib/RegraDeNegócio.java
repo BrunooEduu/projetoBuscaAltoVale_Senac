@@ -1,3 +1,5 @@
+package lib;
+
 //REGRA DE NEGÓCIOS – PROJETO BUSCA JOB’S
 //
 //Azul = Telas

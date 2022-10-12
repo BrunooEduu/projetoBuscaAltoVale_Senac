@@ -1,4 +1,4 @@
-package view.PessoaFísica;
+package view.PessoaFisica;
 
 import view.FuncoesTelaPrincipal.Login;
 
