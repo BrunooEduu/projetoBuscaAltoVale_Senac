@@ -34,7 +34,7 @@ public class Principal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.OverlayLayout(getContentPane()));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/buscaJobs.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Busca Jobs.png"))); // NOI18N
         getContentPane().add(jLabel2);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Alunos2.jpeg"))); // NOI18N

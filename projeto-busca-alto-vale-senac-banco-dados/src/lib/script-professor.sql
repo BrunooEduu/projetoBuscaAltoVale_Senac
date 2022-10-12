@@ -6,26 +6,25 @@ drop table tbpessoafisica;
 drop table tbpessoajuridica;
 
 CREATE TABLE public.tbpessoa(
-	pescodigo serial NOT null,
-	pesnome varchar(100) NOT NULL,
-	pescpf varchar(20) NOT NULL,
-	pesemail varchar(100) NOT NULL,
-	pessenha varchar(100) NOT NULL,
-	pestelefone varchar(25) NOT null,
-	pescidade varchar(100) not null,
-	pesestado varchar(100) not null,
-	pestipo int not null default 1,-- (1 - fisica - 2- Juridica)
-	CONSTRAINT pk_tbpessoa PRIMARY KEY (pescodigo)
+    pescodigo serial NOT null,
+    pesnome varchar(100) NOT NULL,
+    pescpfcnpj varchar(20) NOT NULL,
+    pesemail varchar(100) NOT NULL,
+    pessenha varchar(100) NOT NULL,
+    pestelefone varchar(25) NOT null,
+    pescidade varchar(100) not null,
+    pesestado varchar(100) not null,
+    pestipo int not null default 1,-- (1 - fisica - 2- Juridica)
+    pesdescricao varchar(400) null,
+    pesatuacao varchar(400) null,
+    CONSTRAINT pk_tbpessoa PRIMARY KEY (pescodigo)
 );
 
-create unique index tbpessoa_cpfcnpj_email_idx on tbpessoa using btree (pescpfcnpj, pesemail);
+-- Nao deixa cadastrar 2 cpf/cnpj iguais
+create unique index tbpessoa_cpfcnpj_idx on tbpessoa using btree (pescpfcnpj);
 
-CREATE TABLE public.tbempresa (
-	pescodigo int not null,
-	empdescricao text not null,
-	empatuacao varchar(100) not null,
-	CONSTRAINT pk_tbempresa PRIMARY KEY (pescodigo)
-);
+-- Nao deixa cadastrar 2 e-mail iguais
+create unique index tbpessoa_email_idx on tbpessoa using btree (pesemail);
 
 -- FK DE EMPRESA PARA PESSOA
 alter table public.tbempresa add CONSTRAINT "FK_TBEMPRESA=>TBPESSOA" FOREIGN KEY (pescodigo)

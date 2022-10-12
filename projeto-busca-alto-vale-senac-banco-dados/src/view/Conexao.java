@@ -5,54 +5,18 @@ import javax.swing.JOptionPane;
 
 public class Conexao {
 
+    // CONEXAO EFETIVA EQUIPE BRUNO EDUARDO
+//    private static final String HOST     = "db.vdcszqvvrwdqcnjvcoxt.supabase.co";
+//    private static final String SENHA    = "SENHA";
+
+    // CONEXAO TEMPORARIA BANCO GELVAZIO
+    private static final String HOST     = "db.vdcszqvvrwdqcnjvcoxt.supabase.co";
+    private static final String SENHA    = "bMn0PTMuUVC06ijP";
+
     private static final String DRIVER   = "org.postgresql.Driver";
-    private static final String BANCO    = "projetoBuscaAltoVale";
-    private static final String CONEXAO  = "jdbc:postgresql://localhost/" + BANCO;
+    private static final String BANCO    = "postgres";
+    private static final String CONEXAO  = "jdbc:postgresql://" + HOST + "/" + BANCO;
     private static final String USUARIO  = "postgres";
-    private static final String SENHA    = "postgres";
-    
-    public static void main(String args[]) {
-
-        // SUPABASE
-        String driver  = "org.postgresql.Driver";
-        String url     = "jdbc:postgresql://localhost/" + BANCO;
-        String usuario = "postgres";
-        String senha   = "postgres";
-
-        String lista_dados = "";
-        String lista_dados_json = "";
-
-        Connection conexao;
-        Statement statement;
-        ResultSet resultset;
-        try {
-            Class.forName(driver);
-            conexao = DriverManager.getConnection(url, usuario, senha);
-
-            System.out.println("Conectou com o PostgreSQL!");
-
-            statement = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
-                                                ResultSet.CONCUR_READ_ONLY);
-
-            resultset = statement.executeQuery("select * from public.tbcadastropessoafisica limit 50");
-
-            while (resultset.next()) {
-                int id       = resultset.getInt("fisicocodigo");
-                String nomecompleto  = resultset.getString("nomecompleto");
-
-                lista_dados_json = lista_dados_json + "{" +
-                        "\"codigo\":\"" + id +"\"," +
-                        "\"nome\":\"" + nomecompleto +"\"," +
-                        "}";
-            }
-            
-            System.out.println(lista_dados);
-        } catch (ClassNotFoundException Driver) {
-            JOptionPane.showMessageDialog(null, "Driver não localizado: " + Driver);
-        } catch (SQLException Fonte) {
-            JOptionPane.showMessageDialog(null, "Deu erro na conexão com a fonte de dados: " + Fonte);
-        }
-    }
 
     public static Connection getConexao() {
         Connection conn = null;
