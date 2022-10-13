@@ -3,8 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projeto-busca-alto-vale-senac-banco-dados/src/profgelvazio/Login.java</file>
-            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projeto-busca-alto-vale-senac-banco-dados/src/profgelvazio/ControllerProdutoDB.java</file>
+            <file>file:/C:/xampp/htdocs/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados/src/view/Administrador/PainelAdministrador.java</file>
+            <file>file:/C:/xampp/htdocs/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados/src/view/PessoaJuridica/CadastroJuridico.java</file>
+            <file>file:/C:/xampp/htdocs/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados/src/view/FuncoesTelaPrincipal/Cadastrar.java</file>
         </group>
     </open-files>
 </project-private>
