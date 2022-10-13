@@ -4,11 +4,15 @@
  */
 package view.FuncoesTelaPrincipal;
 
+import view.Administrador.PainelAdministrador;
+
 /**
  *
  * @author Bruno
  */
 public class Administrador extends javax.swing.JFrame {
+    
+    PainelAdministrador painelAdm = new PainelAdministrador();
 
     /**
      * Creates new form sas
@@ -96,8 +100,8 @@ public class Administrador extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnSairAdministrador))
+                            .addGap(18, 18, 18)
+                            .addComponent(btnSairAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(edtCodigoAdm, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(edtSenhaAdm, javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +166,8 @@ public class Administrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        // TODO add your handling code here:
+        painelAdm.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnOkActionPerformed
 
     private void edtSenhaAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtSenhaAdmActionPerformed
