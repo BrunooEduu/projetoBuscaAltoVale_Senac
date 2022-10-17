@@ -27,9 +27,9 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnVoltar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="btnSair" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
@@ -45,9 +45,9 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+              <Component id="btnConsultarJuridico" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-              <Component id="jButton6" min="-2" max="-2" attributes="0"/>
+              <Component id="btnConsultarFisico" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -61,13 +61,13 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton6" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                  <Component id="jButton5" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnConsultarFisico" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="btnConsultarJuridico" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="btnSair" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="btnVoltar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="29" max="32767" attributes="0"/>
           </Group>
@@ -86,21 +86,27 @@
         <Property name="text" type="java.lang.String" value="Consultar Cadastro:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnVoltar">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btnSair">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -113,15 +119,21 @@
         <Property name="text" type="java.lang.String" value="Busca Job&apos;s"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="btnConsultarJuridico">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pessoa Jur&#xed;dica"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsultarJuridicoActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="btnConsultarFisico">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pessoa F&#xed;sica"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsultarFisicoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

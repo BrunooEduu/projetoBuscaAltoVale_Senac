@@ -34,29 +34,31 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="177" max="32767" attributes="0"/>
+              <EmptySpace pref="161" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton2" min="-2" pref="181" max="-2" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="181" max="-2" attributes="0"/>
-                          <Component id="jButton3" alignment="0" min="-2" pref="181" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jButton6" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="btnVoltarPrincipal" min="-2" pref="75" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton5" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="btnSair" min="-2" pref="75" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="btnExcluirCadastro" alignment="1" min="-2" pref="203" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="btnAlterarCadastro" max="32767" attributes="0"/>
+                              <Component id="btnConsultarPessoasInscritas" min="-2" pref="203" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -70,15 +72,15 @@
               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="btnConsultarPessoasInscritas" min="-2" pref="48" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="btnAlterarCadastro" min="-2" pref="48" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="btnExcluirCadastro" min="-2" pref="48" max="-2" attributes="0"/>
               <EmptySpace pref="105" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton5" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                  <Component id="jButton6" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="btnSair" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="btnVoltarPrincipal" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -94,30 +96,45 @@
         <Property name="text" type="java.lang.String" value="Bem Vindo(a)!"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnExcluirCadastro">
       <Properties>
         <Property name="text" type="java.lang.String" value="Excluir o Cadastro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnExcluirCadastroActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnConsultarPessoasInscritas">
       <Properties>
         <Property name="text" type="java.lang.String" value="Consultar Pessoas Inscritas"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConsultarPessoasInscritasActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btnAlterarCadastro">
       <Properties>
         <Property name="text" type="java.lang.String" value="Alterar o Cadastro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAlterarCadastroActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="btnSair">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="btnVoltarPrincipal">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarPrincipalActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel16">
       <Properties>

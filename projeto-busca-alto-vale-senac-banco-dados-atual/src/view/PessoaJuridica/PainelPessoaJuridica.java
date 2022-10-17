@@ -4,6 +4,8 @@
  */
 package view.PessoaJuridica;
 
+import view.Principal;
+
 /**
  *
  * @author raiss
@@ -29,11 +31,11 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
 
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnExcluirCadastro = new javax.swing.JButton();
+        btnConsultarPessoasInscritas = new javax.swing.JButton();
+        btnAlterarCadastro = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnVoltarPrincipal = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
 
         jFormattedTextField1.setText("jFormattedTextField1");
@@ -44,15 +46,40 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setText("Bem Vindo(a)!");
 
-        jButton1.setText("Excluir o Cadastro");
+        btnExcluirCadastro.setText("Excluir o Cadastro");
+        btnExcluirCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirCadastroActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Consultar Pessoas Inscritas");
+        btnConsultarPessoasInscritas.setText("Consultar Pessoas Inscritas");
+        btnConsultarPessoasInscritas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarPessoasInscritasActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Alterar o Cadastro");
+        btnAlterarCadastro.setText("Alterar o Cadastro");
+        btnAlterarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarCadastroActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Sair");
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Voltar");
+        btnVoltarPrincipal.setText("Voltar");
+        btnVoltarPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarPrincipalActionPerformed(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(51, 51, 255));
@@ -63,25 +90,26 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(177, Short.MAX_VALUE)
+                .addContainerGap(161, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(164, 164, 164))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(180, 180, 180))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnVoltarPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel16)
-                        .addContainerGap())))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnExcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btnAlterarCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnConsultarPessoasInscritas, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(158, 158, 158))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,20 +119,49 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addComponent(jLabel3)
                 .addGap(48, 48, 48)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnConsultarPessoasInscritas, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAlterarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExcluirCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVoltarPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnVoltarPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarPrincipalActionPerformed
+        Principal voltarPrincipal = new Principal();
+        voltarPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVoltarPrincipalActionPerformed
+
+    private void btnConsultarPessoasInscritasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarPessoasInscritasActionPerformed
+        ConsultarPessoasInscritas consultarPessoasInscritas = new ConsultarPessoasInscritas();
+        consultarPessoasInscritas.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnConsultarPessoasInscritasActionPerformed
+
+    private void btnAlterarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarCadastroActionPerformed
+        CadastroJuridico alterarCadastro = new CadastroJuridico();
+        alterarCadastro.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnAlterarCadastroActionPerformed
+
+    private void btnExcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCadastroActionPerformed
+        ExcluirCadastroJuridico excluirCadastro = new ExcluirCadastroJuridico();
+        excluirCadastro.setVisible(true);
+        dispose();
+        
+    }//GEN-LAST:event_btnExcluirCadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,11 +200,11 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton btnAlterarCadastro;
+    private javax.swing.JButton btnConsultarPessoasInscritas;
+    private javax.swing.JButton btnExcluirCadastro;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltarPrincipal;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;

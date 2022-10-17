@@ -1,6 +1,8 @@
 package view.PessoaFisica;
 
-import view.FuncoesTelaPrincipal.Login;
+import view.Principal;
+
+
 
 /**
  *
@@ -8,7 +10,7 @@ import view.FuncoesTelaPrincipal.Login;
  */
 public class CadastroFisico extends javax.swing.JFrame {
 
-    Login loginFisico = new Login();
+    
 
     public CadastroFisico() {
         initComponents();
@@ -45,25 +47,25 @@ public class CadastroFisico extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btnCancelar = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
         edtCpf = new javax.swing.JTextField();
         edtSenhaFisico = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        edtConfirmarSenhaFisico = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         edtTelefoneFisico = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        edtConfirmaEmailFisico = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        edtCidade = new javax.swing.JComboBox<>();
         jSeparator2 = new javax.swing.JSeparator();
-        btnLoginFisico = new javax.swing.JButton();
+        btnConfirmar = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        edtEstado = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -117,10 +119,10 @@ public class CadastroFisico extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 51, 102));
         jLabel6.setText("CPF:");
 
-        btnCancelar.setText("Voltar");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnVoltarActionPerformed(evt);
             }
         });
 
@@ -131,9 +133,9 @@ public class CadastroFisico extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        edtConfirmarSenhaFisico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                edtConfirmarSenhaFisicoActionPerformed(evt);
             }
         });
 
@@ -159,9 +161,9 @@ public class CadastroFisico extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(0, 51, 102));
         jLabel10.setText("Senha:");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        edtConfirmaEmailFisico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                edtConfirmaEmailFisicoActionPerformed(evt);
             }
         });
 
@@ -169,17 +171,17 @@ public class CadastroFisico extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(0, 51, 102));
         jLabel11.setText("Informações para cadastro:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Aqui:", "Agrolândia", "Agronômica", "Atalanta", "Aurora", "Braço do Trombudo", "Chapadão do Lageado", "Dona Emma", "Ibirama", "Imbuia", "Ituporanga", "José Boiteux", "Laurentino", "Lontras", "Mirim Doce", "Petrolândia", "Pouso Redondo", "Presidente Getúlio", "Presidente Nereu", "Rio do Campo", "Rio do Oeste", "Rio do Sul", "Salete", "Santa Terezinha", "Taió", "Trombudo Central", "Vidal Ramos", "Vitor Meireles", "Witmarsum" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        edtCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione Aqui:", "Agrolândia", "Agronômica", "Atalanta", "Aurora", "Braço do Trombudo", "Chapadão do Lageado", "Dona Emma", "Ibirama", "Imbuia", "Ituporanga", "José Boiteux", "Laurentino", "Lontras", "Mirim Doce", "Petrolândia", "Pouso Redondo", "Presidente Getúlio", "Presidente Nereu", "Rio do Campo", "Rio do Oeste", "Rio do Sul", "Salete", "Santa Terezinha", "Taió", "Trombudo Central", "Vidal Ramos", "Vitor Meireles", "Witmarsum" }));
+        edtCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                edtCidadeActionPerformed(evt);
             }
         });
 
-        btnLoginFisico.setText("Confirmar");
-        btnLoginFisico.addActionListener(new java.awt.event.ActionListener() {
+        btnConfirmar.setText("Confirmar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoginFisicoActionPerformed(evt);
+                btnConfirmarActionPerformed(evt);
             }
         });
 
@@ -191,10 +193,10 @@ public class CadastroFisico extends javax.swing.JFrame {
         jLabel15.setForeground(new java.awt.Color(0, 51, 102));
         jLabel15.setText("Localização: Estado");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Santa Catarina" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        edtEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Santa Catarina" }));
+        edtEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                edtEstadoActionPerformed(evt);
             }
         });
 
@@ -252,14 +254,14 @@ public class CadastroFisico extends javax.swing.JFrame {
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edtConfirmaEmailFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65)
-                        .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(edtConfirmarSenhaFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(503, 503, 503)
-                        .addComponent(btnLoginFisico)
+                        .addComponent(btnConfirmar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(7, 7, 7)
                         .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -270,8 +272,8 @@ public class CadastroFisico extends javax.swing.JFrame {
                         .addGap(211, 211, 211)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(edtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(263, 263, 263)
@@ -309,13 +311,13 @@ public class CadastroFisico extends javax.swing.JFrame {
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(edtTelefoneFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jLabel15))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
@@ -336,13 +338,13 @@ public class CadastroFisico extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtConfirmaEmailFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtConfirmarSenhaFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLoginFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
 
@@ -353,38 +355,42 @@ public class CadastroFisico extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void edtConfirmarSenhaFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtConfirmarSenhaFisicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+    }//GEN-LAST:event_edtConfirmarSenhaFisicoActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        Principal voltarPrincipal = new Principal();
+        voltarPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        PainelPessoaFisica confirmarFisico = new PainelPessoaFisica();
+        confirmarFisico.setVisible(true);
+        dispose();
 
-    private void btnLoginFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginFisicoActionPerformed
-        loginFisico.setVisible(true);
-
-    }//GEN-LAST:event_btnLoginFisicoActionPerformed
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
 
     }//GEN-LAST:event_edtNomeActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void edtCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_edtCidadeActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void edtConfirmaEmailFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtConfirmaEmailFisicoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_edtConfirmaEmailFisicoActionPerformed
 
     private void edtTelefoneFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtTelefoneFisicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtTelefoneFisicoActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void edtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEstadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_edtEstadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -427,18 +433,20 @@ public class CadastroFisico extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnLoginFisico;
+    private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltar;
+    private javax.swing.JComboBox<String> edtCidade;
+    private javax.swing.JTextField edtConfirmaEmailFisico;
+    private javax.swing.JPasswordField edtConfirmarSenhaFisico;
     private javax.swing.JTextField edtCpf;
     private javax.swing.JTextField edtEmailFisico;
+    private javax.swing.JComboBox<String> edtEstado;
     private javax.swing.JTextField edtNome;
     private javax.swing.JPasswordField edtSenhaFisico;
     private javax.swing.JTextField edtTelefoneFisico;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -456,7 +464,6 @@ public class CadastroFisico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -464,7 +471,6 @@ public class CadastroFisico extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
  }

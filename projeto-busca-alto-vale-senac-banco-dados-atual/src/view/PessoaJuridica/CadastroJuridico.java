@@ -5,6 +5,8 @@
  */
 package view.PessoaJuridica;
 
+import view.Principal;
+
 /**
  *
  * @author bruno.sasse
@@ -43,17 +45,17 @@ public class CadastroJuridico extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         edtCnpj = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        edtAtuacao = new javax.swing.JComboBox<>();
+        edtEstado = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         edtDescricao = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         edtSenhaJuridico = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        edtConfirmaSenhaJuridico = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         edtEmailJuridico = new javax.swing.JTextField();
-        btnCancelar = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -61,13 +63,13 @@ public class CadastroJuridico extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         edtTelefoneJuridico = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        edtAtuacao1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        edtConfirmaEmailJuridico = new javax.swing.JTextField();
+        edtAtuacao = new javax.swing.JComboBox<>();
+        btnVoltar = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
-        edtAtuacao3 = new javax.swing.JComboBox<>();
+        edtCidade = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
@@ -91,10 +93,10 @@ public class CadastroJuridico extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Área de atuação:");
 
-        edtAtuacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Santa Catarina" }));
-        edtAtuacao.addActionListener(new java.awt.event.ActionListener() {
+        edtEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Santa Catarina" }));
+        edtEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtAtuacaoActionPerformed(evt);
+                edtEstadoActionPerformed(evt);
             }
         });
 
@@ -114,11 +116,11 @@ public class CadastroJuridico extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("E-mail:");
 
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Knob Cancel.png"))); // NOI18N
-        btnCancelar.setText("Sair");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Knob Cancel.png"))); // NOI18N
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
 
@@ -148,27 +150,27 @@ public class CadastroJuridico extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel14.setText("Confirme E-mail:");
 
-        edtAtuacao1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione aqui:", "Alimentício", "Saúde", "Hospedagem", "Ensino" }));
-        edtAtuacao1.addActionListener(new java.awt.event.ActionListener() {
+        edtAtuacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione aqui:", "Alimentício", "Saúde", "Hospedagem", "Ensino" }));
+        edtAtuacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtAtuacao1ActionPerformed(evt);
+                edtAtuacaoActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Voltar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnVoltarActionPerformed(evt);
             }
         });
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setText("Localização: Estado");
 
-        edtAtuacao3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione aqui:", "Agrolândia", "Agronômica", "Atalanta", "Aurora", "Braço do Trombudo", "Chapadão do Lageado", "Dona Emma", "Ibirama", "Imbuia", "Ituporanga", "José Boiteux", "Laurentino", "Lontras", "Mirim Doce", "Petrolândia", "Pouso Redondo", "Presidente Getúlio", "Presidente Nereu", "Rio do Campo", "Rio do Oeste", "Rio do Sul", "Salete", "Santa Terezinha", "Taió", "Trombudo Central", "Vidal Ramos", "Vitor Meireles", "Witmarsum" }));
-        edtAtuacao3.addActionListener(new java.awt.event.ActionListener() {
+        edtCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione aqui:", "Agrolândia", "Agronômica", "Atalanta", "Aurora", "Braço do Trombudo", "Chapadão do Lageado", "Dona Emma", "Ibirama", "Imbuia", "Ituporanga", "José Boiteux", "Laurentino", "Lontras", "Mirim Doce", "Petrolândia", "Pouso Redondo", "Presidente Getúlio", "Presidente Nereu", "Rio do Campo", "Rio do Oeste", "Rio do Sul", "Salete", "Santa Terezinha", "Taió", "Trombudo Central", "Vidal Ramos", "Vitor Meireles", "Witmarsum" }));
+        edtCidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtAtuacao3ActionPerformed(evt);
+                edtCidadeActionPerformed(evt);
             }
         });
 
@@ -208,7 +210,7 @@ public class CadastroJuridico extends javax.swing.JFrame {
                             .addComponent(edtTelefoneJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(164, 164, 164)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edtAtuacao3, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
@@ -217,9 +219,9 @@ public class CadastroJuridico extends javax.swing.JFrame {
                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(edtAtuacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edtAtuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(92, 92, 92)
-                        .addComponent(edtAtuacao, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(edtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 311, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(jLabel5))
@@ -253,13 +255,13 @@ public class CadastroJuridico extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnConfirmar)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnCancelar))
+                                .addComponent(btnSair))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edtConfirmaEmailJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(71, 71, 71)
-                                .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(edtConfirmaSenhaJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(232, 232, 232)
@@ -294,7 +296,7 @@ public class CadastroJuridico extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(edtTelefoneJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtAtuacao3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
@@ -303,8 +305,8 @@ public class CadastroJuridico extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(edtAtuacao1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(edtAtuacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(edtAtuacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addComponent(jLabel5)
                 .addGap(6, 6, 6)
@@ -327,12 +329,12 @@ public class CadastroJuridico extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtConfirmaEmailJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtConfirmaSenhaJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
@@ -340,29 +342,33 @@ public class CadastroJuridico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void edtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edtEstadoActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairActionPerformed
+
     private void edtAtuacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtAtuacaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edtAtuacaoActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
-    private void edtAtuacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtAtuacao1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_edtAtuacao1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        Principal voltarPrincipal = new Principal();
+        voltarPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        // TODO add your handling code here:
+        PainelPessoaJuridica confirmarJuridico = new PainelPessoaJuridica();
+        confirmarJuridico.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
-    private void edtAtuacao3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtAtuacao3ActionPerformed
+    private void edtCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCidadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtAtuacao3ActionPerformed
+    }//GEN-LAST:event_edtCidadeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -401,19 +407,21 @@ public class CadastroJuridico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnConfirmar;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JComboBox<String> edtAtuacao;
-    private javax.swing.JComboBox<String> edtAtuacao1;
     private javax.swing.JComboBox<String> edtAtuacao2;
-    private javax.swing.JComboBox<String> edtAtuacao3;
+    private javax.swing.JComboBox<String> edtCidade;
     private javax.swing.JTextField edtCnpj;
+    private javax.swing.JTextField edtConfirmaEmailJuridico;
+    private javax.swing.JPasswordField edtConfirmaSenhaJuridico;
     private javax.swing.JTextArea edtDescricao;
     private javax.swing.JTextField edtEmailJuridico;
+    private javax.swing.JComboBox<String> edtEstado;
     private javax.swing.JTextField edtRazaoSocial;
     private javax.swing.JPasswordField edtSenhaJuridico;
     private javax.swing.JTextField edtTelefoneJuridico;
-    private javax.swing.JButton jButton1;
     private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JFileChooser jFileChooser2;
     private javax.swing.JLabel jLabel1;
@@ -432,7 +440,6 @@ public class CadastroJuridico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
@@ -440,7 +447,6 @@ public class CadastroJuridico extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSlider jSlider1;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextPane jTextPane1;
     private java.awt.TextField textField1;
     // End of variables declaration//GEN-END:variables

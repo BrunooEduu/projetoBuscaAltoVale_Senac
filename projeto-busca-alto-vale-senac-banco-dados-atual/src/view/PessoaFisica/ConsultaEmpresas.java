@@ -30,12 +30,12 @@ package view.PessoaFisica;
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jButton4 = new javax.swing.JButton();
+        btnCadastrarVaga = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        btnCnpj = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        btnRazaoSocial = new javax.swing.JTextField();
         btnVoltar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
@@ -96,10 +96,10 @@ package view.PessoaFisica;
         jTable1.setShowGrid(true);
         jScrollPane2.setViewportView(jTable1);
 
-        jButton4.setText("Cadastrar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrarVaga.setText("Cadastrar");
+        btnCadastrarVaga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnCadastrarVagaActionPerformed(evt);
             }
         });
 
@@ -109,9 +109,9 @@ package view.PessoaFisica;
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setText("CNPJ:");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        btnCnpj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                btnCnpjActionPerformed(evt);
             }
         });
 
@@ -150,11 +150,11 @@ package view.PessoaFisica;
                                         .addComponent(jLabel4))
                                     .addComponent(jLabel2)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton4)))))
+                                        .addComponent(btnCadastrarVaga)))))
                         .addGap(0, 2, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -180,9 +180,9 @@ package view.PessoaFisica;
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
+                    .addComponent(btnCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRazaoSocial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastrarVaga))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(btnVoltar)
                 .addGap(19, 19, 19))
@@ -191,16 +191,18 @@ package view.PessoaFisica;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnCadastrarVagaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarVagaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnCadastrarVagaActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void btnCnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCnpjActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_btnCnpjActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        //teste.setVisible(false);
+        PainelPessoaFisica voltarPainelFisico = new PainelPessoaFisica();
+        voltarPainelFisico.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
@@ -242,8 +244,10 @@ package view.PessoaFisica;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastrarVaga;
+    private javax.swing.JTextField btnCnpj;
+    private javax.swing.JTextField btnRazaoSocial;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -253,8 +257,6 @@ package view.PessoaFisica;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 
    

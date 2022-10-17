@@ -58,14 +58,14 @@
                       <Component id="jLabel3" alignment="0" min="-2" pref="155" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jButton3" max="32767" attributes="0"/>
+                              <Component id="btnVoltar" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnSairAdministrador" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="btnSair" min="-2" pref="70" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
                           <Component id="edtCodigoAdm" alignment="0" max="32767" attributes="0"/>
                           <Component id="edtSenhaAdm" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnOk" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnEntrar" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="125" max="32767" attributes="0"/>
@@ -101,11 +101,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="edtSenhaAdm" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="btnOk" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="btnEntrar" min="-2" pref="37" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btnSairAdministrador" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnVoltar" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btnSair" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="45" max="32767" attributes="0"/>
               </Group>
@@ -121,12 +121,12 @@
             <Property name="text" type="java.lang.String" value="Senha:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnOk">
+        <Component class="javax.swing.JButton" name="btnEntrar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Entrar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnOkActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEntrarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="edtSenhaAdm">
@@ -163,18 +163,21 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtCodigoAdmActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnSairAdministrador">
+        <Component class="javax.swing.JButton" name="btnSair">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairAdministradorActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="btnVoltar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Voltar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>

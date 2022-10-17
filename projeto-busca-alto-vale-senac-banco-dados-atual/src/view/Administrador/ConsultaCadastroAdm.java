@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.AdministradorBruno;
+package view.Administrador;
 
 /**
  *
@@ -16,6 +16,7 @@ public class ConsultaCadastroAdm extends javax.swing.JFrame {
      */
     public ConsultaCadastroAdm() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -28,11 +29,11 @@ public class ConsultaCadastroAdm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnConsultarJuridico = new javax.swing.JButton();
+        btnConsultarFisico = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,19 +41,39 @@ public class ConsultaCadastroAdm extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("Consultar Cadastro:");
 
-        jButton2.setForeground(new java.awt.Color(0, 0, 153));
-        jButton2.setText("Voltar");
+        btnVoltar.setForeground(new java.awt.Color(0, 0, 153));
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setForeground(new java.awt.Color(0, 0, 153));
-        jButton3.setText("Sair");
+        btnSair.setForeground(new java.awt.Color(0, 0, 153));
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 255));
         jLabel2.setText("Busca Job's");
 
-        jButton5.setText("Pessoa Jurídica");
+        btnConsultarJuridico.setText("Pessoa Jurídica");
+        btnConsultarJuridico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarJuridicoActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Pessoa Física");
+        btnConsultarFisico.setText("Pessoa Física");
+        btnConsultarFisico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarFisicoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,9 +83,9 @@ public class ConsultaCadastroAdm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(btnVoltar)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel2)
@@ -75,9 +96,9 @@ public class ConsultaCadastroAdm extends javax.swing.JFrame {
                 .addGap(0, 111, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(btnConsultarJuridico)
                 .addGap(57, 57, 57)
-                .addComponent(jButton6)
+                .addComponent(btnConsultarFisico)
                 .addGap(68, 68, 68))
         );
         layout.setVerticalGroup(
@@ -89,17 +110,39 @@ public class ConsultaCadastroAdm extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnConsultarFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnConsultarJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        PainelAdministrador voltarPainelAdministrador = new PainelAdministrador();
+        voltarPainelAdministrador.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnConsultarFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarFisicoActionPerformed
+        ListarCadastroTabelaFisico consultarCadastroFisico = new ListarCadastroTabelaFisico();
+        consultarCadastroFisico.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnConsultarFisicoActionPerformed
+
+    private void btnConsultarJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarJuridicoActionPerformed
+        ListarCadastroTabelaJuridico consultarCadastroJuridico = new ListarCadastroTabelaJuridico();
+        consultarCadastroJuridico.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnConsultarJuridicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,10 +180,10 @@ public class ConsultaCadastroAdm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton btnConsultarFisico;
+    private javax.swing.JButton btnConsultarJuridico;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

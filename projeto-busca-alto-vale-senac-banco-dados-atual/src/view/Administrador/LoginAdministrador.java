@@ -2,22 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view.FuncoesTelaPrincipal;
+package view.Administrador;
 
-import view.Administrador.PainelAdministrador;
+import view.Principal;
+
+
 
 /**
  *
  * @author Bruno
  */
-public class Administrador extends javax.swing.JFrame {
+public class LoginAdministrador extends javax.swing.JFrame {
     
-    PainelAdministrador painelAdm = new PainelAdministrador();
+    
 
     /**
      * Creates new form sas
      */
-    public Administrador() {
+    public LoginAdministrador() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -33,13 +35,13 @@ public class Administrador extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        btnOk = new javax.swing.JButton();
+        btnEntrar = new javax.swing.JButton();
         edtSenhaAdm = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         edtCodigoAdm = new javax.swing.JTextField();
-        btnSairAdministrador = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,10 +49,10 @@ public class Administrador extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Senha:");
 
-        btnOk.setText("Entrar");
-        btnOk.addActionListener(new java.awt.event.ActionListener() {
+        btnEntrar.setText("Entrar");
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOkActionPerformed(evt);
+                btnEntrarActionPerformed(evt);
             }
         });
 
@@ -76,14 +78,19 @@ public class Administrador extends javax.swing.JFrame {
             }
         });
 
-        btnSairAdministrador.setText("Sair");
-        btnSairAdministrador.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairAdministradorActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Voltar");
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 255));
@@ -99,13 +106,13 @@ public class Administrador extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(18, 18, 18)
-                            .addComponent(btnSairAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(edtCodigoAdm, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(edtSenhaAdm, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnOk, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnEntrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(125, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -133,11 +140,11 @@ public class Administrador extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(edtSenhaAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSairAdministrador, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -165,10 +172,11 @@ public class Administrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
-        painelAdm.setVisible(true);
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        PainelAdministrador entrarAdministrador = new PainelAdministrador();
+        entrarAdministrador.setVisible(true);
         dispose();
-    }//GEN-LAST:event_btnOkActionPerformed
+    }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void edtSenhaAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtSenhaAdmActionPerformed
         // TODO add your handling code here:
@@ -178,9 +186,15 @@ public class Administrador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_edtCodigoAdmActionPerformed
 
-    private void btnSairAdministradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairAdministradorActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_btnSairAdministradorActionPerformed
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        Principal voltarPrincipal = new Principal();
+        voltarPrincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -199,14 +213,18 @@ public class Administrador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Administrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoginAdministrador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -215,17 +233,17 @@ public class Administrador extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Administrador().setVisible(true);
+                new LoginAdministrador().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnOk;
-    private javax.swing.JButton btnSairAdministrador;
+    private javax.swing.JButton btnEntrar;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JTextField edtCodigoAdm;
     private javax.swing.JPasswordField edtSenhaAdm;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

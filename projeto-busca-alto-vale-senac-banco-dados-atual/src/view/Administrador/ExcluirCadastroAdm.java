@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.AdministradorBruno;
+package view.Administrador;
 
 /**
  *
@@ -16,6 +16,7 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
      */
     public ExcluirCadastroAdm() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -34,9 +35,9 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        edtCpfOuCnpj = new javax.swing.JTextField();
+        btnConfirmar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -63,15 +64,20 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Digite o CPF ou CNPJ ");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        edtCpfOuCnpj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                edtCpfOuCnpjActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Confirmar");
+        btnConfirmar.setText("Confirmar");
 
-        jButton4.setText("Cancelar");
+        btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 255));
@@ -83,15 +89,15 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(59, 59, 59)
-                .addComponent(jButton2)
+                .addComponent(btnConfirmar)
                 .addGap(135, 135, 135)
-                .addComponent(jButton4)
+                .addComponent(btnCancelar)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edtCpfOuCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -114,11 +120,11 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edtCpfOuCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -129,9 +135,15 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void edtCpfOuCnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCpfOuCnpjActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_edtCpfOuCnpjActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        PainelAdministrador voltarPainelAdministrador = new PainelAdministrador();
+        voltarPainelAdministrador.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,16 +182,16 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnConfirmar;
+    private javax.swing.JTextField edtCpfOuCnpj;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

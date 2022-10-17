@@ -5,20 +5,22 @@
  */
 package view.PessoaFisica;
 
+import view.Principal;
+
 /**
  *
  * @author guilherme.schroder
  */
 public class PainelPessoaFisica extends javax.swing.JFrame {
 
-    ConsultaEmpresas consultarEmpresas = new ConsultaEmpresas();
+    
     
    // CadastroFisico alterarCadastro = new CadastroFisico();
     
     public PainelPessoaFisica() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setLocation(1, 1);
+        
     }
 
     /**
@@ -34,10 +36,10 @@ public class PainelPessoaFisica extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         btnConsultaEmpresas = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnExcluirCadastroFisico = new javax.swing.JButton();
         btnAlterarCadastro = new javax.swing.JButton();
-        btnSairPainelAdm = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
 
@@ -59,8 +61,13 @@ public class PainelPessoaFisica extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setText("Excluir Cadastro");
+        btnExcluirCadastroFisico.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnExcluirCadastroFisico.setText("Excluir Cadastro");
+        btnExcluirCadastroFisico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirCadastroFisicoActionPerformed(evt);
+            }
+        });
 
         btnAlterarCadastro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnAlterarCadastro.setText("Alterar Cadastro");
@@ -70,14 +77,19 @@ public class PainelPessoaFisica extends javax.swing.JFrame {
             }
         });
 
-        btnSairPainelAdm.setText("Sair");
-        btnSairPainelAdm.addActionListener(new java.awt.event.ActionListener() {
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairPainelAdmActionPerformed(evt);
+                btnSairActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Voltar");
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 255));
@@ -103,12 +115,12 @@ public class PainelPessoaFisica extends javax.swing.JFrame {
                         .addComponent(btnAlterarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(150, 150, 150)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnExcluirCadastroFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(230, 230, 230)
-                        .addComponent(jButton6)
+                        .addComponent(btnVoltar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSairPainelAdm)))
+                        .addComponent(btnSair)))
                 .addGap(70, 70, 70))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jLabel4)
@@ -128,11 +140,11 @@ public class PainelPessoaFisica extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addComponent(btnAlterarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnExcluirCadastroFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSairPainelAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21))
         );
 
@@ -140,19 +152,33 @@ public class PainelPessoaFisica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnConsultaEmpresasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaEmpresasActionPerformed
+       ConsultaEmpresas consultarEmpresas = new ConsultaEmpresas();
        consultarEmpresas.setVisible(true);
-        dispose();
+       dispose();
     }//GEN-LAST:event_btnConsultaEmpresasActionPerformed
 
     private void btnAlterarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarCadastroActionPerformed
-       // alterarCadastro.setVisible(true);
-        //dispose();
+       CadastroFisico alterarCadastro = new CadastroFisico();
+       alterarCadastro.setVisible(true);
+       dispose();
     }//GEN-LAST:event_btnAlterarCadastroActionPerformed
 
-    private void btnSairPainelAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairPainelAdmActionPerformed
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
+        
+    }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        Principal voltarPrincipal = new Principal();
+        voltarPrincipal.setVisible(true);
         dispose();
-    }//GEN-LAST:event_btnSairPainelAdmActionPerformed
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnExcluirCadastroFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCadastroFisicoActionPerformed
+        ExcluirCadastroFisico excluirCadastro = new ExcluirCadastroFisico();
+        excluirCadastro.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnExcluirCadastroFisicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,9 +219,9 @@ public class PainelPessoaFisica extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterarCadastro;
     private javax.swing.JButton btnConsultaEmpresas;
-    private javax.swing.JButton btnSairPainelAdm;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton btnExcluirCadastroFisico;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;

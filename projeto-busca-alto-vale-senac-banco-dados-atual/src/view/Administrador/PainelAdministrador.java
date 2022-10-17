@@ -4,18 +4,18 @@
  */
 package view.Administrador;
 
-import view.FuncoesTelaPrincipal.Administrador;
-import view.FuncoesTelaPrincipal.Cadastrar;
+import view.Principal;
+
+
 
 /**
  *
  * @author Bruno
  */
 public class PainelAdministrador extends javax.swing.JFrame {
-    
 
    
-    
+        
     
     public PainelAdministrador() {
         initComponents();
@@ -34,9 +34,9 @@ public class PainelAdministrador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnVoltar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnConsultarCadastro = new javax.swing.JButton();
+        btnEditarCadastro = new javax.swing.JButton();
+        btnExcluirCadastro = new javax.swing.JButton();
         btnAdicionarCadastro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,16 +58,26 @@ public class PainelAdministrador extends javax.swing.JFrame {
             }
         });
 
-        jButton9.setText("Consultar Cadastro");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultarCadastro.setText("Consultar Cadastro");
+        btnConsultarCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                btnConsultarCadastroActionPerformed(evt);
             }
         });
 
-        jButton10.setText("Editar Cadastro");
+        btnEditarCadastro.setText("Editar Cadastro");
+        btnEditarCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarCadastroActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("Excluir Cadastro");
+        btnExcluirCadastro.setText("Excluir Cadastro");
+        btnExcluirCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirCadastroActionPerformed(evt);
+            }
+        });
 
         btnAdicionarCadastro.setText("Adicionar Cadastro");
         btnAdicionarCadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -80,36 +90,36 @@ public class PainelAdministrador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(209, Short.MAX_VALUE)
-                .addComponent(btnVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAdicionarCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(107, 107, 107))
+                .addContainerGap(119, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnVoltar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSair)
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnConsultarCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEditarCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnExcluirCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAdicionarCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(135, 135, 135))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(112, 112, 112))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addComponent(jButton9)
+                .addGap(32, 32, 32)
+                .addComponent(btnConsultarCadastro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10)
+                .addComponent(btnEditarCadastro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(btnExcluirCadastro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAdicionarCadastro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
@@ -122,23 +132,39 @@ public class PainelAdministrador extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton9ActionPerformed
+    private void btnConsultarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarCadastroActionPerformed
+        ConsultaCadastroAdm consultarCadastro = new ConsultaCadastroAdm();
+        consultarCadastro.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnConsultarCadastroActionPerformed
 
     private void btnAdicionarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarCadastroActionPerformed
-        
+        AdicionarCadastro adicionarCadastro = new AdicionarCadastro();
+        adicionarCadastro.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnAdicionarCadastroActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
-        Administrador voltarLoginAdm = new Administrador();
-        voltarLoginAdm.setVisible(true);
+        Principal voltarPrincipal = new Principal();
+        voltarPrincipal.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void btnEditarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCadastroActionPerformed
+        EditarCadastroAdministrador editarCadastro = new EditarCadastroAdministrador();
+        editarCadastro.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnEditarCadastroActionPerformed
+
+    private void btnExcluirCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirCadastroActionPerformed
+        ExcluirCadastroAdm excluirCadastro = new ExcluirCadastroAdm();
+        excluirCadastro.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnExcluirCadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,11 +206,11 @@ public class PainelAdministrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionarCadastro;
+    private javax.swing.JButton btnConsultarCadastro;
+    private javax.swing.JButton btnEditarCadastro;
+    private javax.swing.JButton btnExcluirCadastro;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

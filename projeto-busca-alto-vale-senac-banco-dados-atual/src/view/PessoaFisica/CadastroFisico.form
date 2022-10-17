@@ -194,15 +194,15 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                      <Component id="jTextField4" min="-2" pref="350" max="-2" attributes="0"/>
+                      <Component id="edtConfirmaEmailFisico" min="-2" pref="350" max="-2" attributes="0"/>
                       <EmptySpace min="65" pref="65" max="-2" attributes="0"/>
-                      <Component id="jPasswordField2" min="-2" pref="340" max="-2" attributes="0"/>
+                      <Component id="edtConfirmarSenhaFisico" min="-2" pref="340" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="503" pref="503" max="-2" attributes="0"/>
-                      <Component id="btnLoginFisico" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnConfirmar" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCancelar" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="btnVoltar" min="-2" pref="90" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Component id="btnSair" min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
@@ -215,8 +215,8 @@
                       <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel15" min="-2" pref="125" max="-2" attributes="0"/>
-                          <Component id="jComboBox2" min="-2" pref="260" max="-2" attributes="0"/>
-                          <Component id="jComboBox4" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="edtCidade" min="-2" pref="260" max="-2" attributes="0"/>
+                          <Component id="edtEstado" alignment="0" min="-2" pref="260" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -266,7 +266,7 @@
               <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="edtTelefoneFisico" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtCidade" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -274,7 +274,7 @@
                   <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jComboBox4" min="-2" max="-2" attributes="0"/>
+              <Component id="edtEstado" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
               <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
@@ -299,14 +299,14 @@
               </Group>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPasswordField2" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtConfirmaEmailFisico" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtConfirmarSenhaFisico" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnSair" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="btnCancelar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="btnLoginFisico" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="btnVoltar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="btnConfirmar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
           </Group>
@@ -387,12 +387,12 @@
         <Property name="text" type="java.lang.String" value="CPF:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCancelar">
+    <Component class="javax.swing.JButton" name="btnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSair">
@@ -407,9 +407,9 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="edtSenhaFisico">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField2">
+    <Component class="javax.swing.JPasswordField" name="edtConfirmarSenhaFisico">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jPasswordField2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtConfirmarSenhaFisicoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -461,9 +461,9 @@
         <Property name="text" type="java.lang.String" value="Senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="edtConfirmaEmailFisico">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtConfirmaEmailFisicoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
@@ -477,7 +477,7 @@
         <Property name="text" type="java.lang.String" value="Informa&#xe7;&#xf5;es para cadastro:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="edtCidade">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="29">
@@ -514,7 +514,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtCidadeActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -522,12 +522,12 @@
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator2">
     </Component>
-    <Component class="javax.swing.JButton" name="btnLoginFisico">
+    <Component class="javax.swing.JButton" name="btnConfirmar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirmar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLoginFisicoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnConfirmarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator3">
@@ -554,7 +554,7 @@
         <Property name="text" type="java.lang.String" value="Localiza&#xe7;&#xe3;o: Estado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox4">
+    <Component class="javax.swing.JComboBox" name="edtEstado">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
@@ -563,7 +563,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtEstadoActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

@@ -129,7 +129,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="edtAtuacao3" min="-2" pref="311" max="-2" attributes="0"/>
+                          <Component id="edtCidade" min="-2" pref="311" max="-2" attributes="0"/>
                           <Component id="jLabel17" min="-2" pref="120" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -141,9 +141,9 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="33" pref="33" max="-2" attributes="0"/>
-                      <Component id="edtAtuacao1" min="-2" pref="311" max="-2" attributes="0"/>
-                      <EmptySpace min="92" pref="92" max="-2" attributes="0"/>
                       <Component id="edtAtuacao" min="-2" pref="311" max="-2" attributes="0"/>
+                      <EmptySpace min="92" pref="92" max="-2" attributes="0"/>
+                      <Component id="edtEstado" min="-2" pref="311" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
@@ -185,14 +185,14 @@
                           <Group type="102" attributes="0">
                               <Component id="btnConfirmar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="73" max="-2" attributes="0"/>
+                              <Component id="btnVoltar" min="-2" pref="73" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="btnCancelar" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSair" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jTextField5" min="-2" pref="382" max="-2" attributes="0"/>
+                              <Component id="edtConfirmaEmailJuridico" min="-2" pref="382" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="jPasswordField3" min="-2" pref="259" max="-2" attributes="0"/>
+                              <Component id="edtConfirmaSenhaJuridico" min="-2" pref="259" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -238,7 +238,7 @@
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="edtTelefoneJuridico" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="edtAtuacao3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -249,9 +249,9 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                      <Component id="edtAtuacao1" min="-2" max="-2" attributes="0"/>
+                      <Component id="edtAtuacao" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="edtAtuacao" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtEstado" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -278,13 +278,13 @@
               </Group>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField5" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPasswordField3" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtConfirmaEmailJuridico" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtConfirmaSenhaJuridico" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="btnCancelar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="btnVoltar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="btnSair" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="btnConfirmar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="21" max="32767" attributes="0"/>
@@ -321,7 +321,7 @@
         <Property name="text" type="java.lang.String" value="&#xc1;rea de atua&#xe7;&#xe3;o:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="edtAtuacao">
+    <Component class="javax.swing.JComboBox" name="edtEstado">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="1">
@@ -330,7 +330,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtAtuacaoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtEstadoActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -377,7 +377,7 @@
         <Property name="text" type="java.lang.String" value="Confirme a senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField3">
+    <Component class="javax.swing.JPasswordField" name="edtConfirmaSenhaJuridico">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -389,7 +389,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="edtEmailJuridico">
     </Component>
-    <Component class="javax.swing.JButton" name="btnCancelar">
+    <Component class="javax.swing.JButton" name="btnSair">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/images/Knob Cancel.png"/>
@@ -397,7 +397,7 @@
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
@@ -462,9 +462,9 @@
         <Property name="text" type="java.lang.String" value="Confirme E-mail:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="edtConfirmaEmailJuridico">
     </Component>
-    <Component class="javax.swing.JComboBox" name="edtAtuacao1">
+    <Component class="javax.swing.JComboBox" name="edtAtuacao">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="5">
@@ -477,18 +477,18 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtAtuacao1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtAtuacaoActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnVoltar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVoltarActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JSeparator" name="jSeparator3">
@@ -503,7 +503,7 @@
         <Property name="text" type="java.lang.String" value="Localiza&#xe7;&#xe3;o: Estado"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="edtAtuacao3">
+    <Component class="javax.swing.JComboBox" name="edtCidade">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="29">
@@ -540,7 +540,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtAtuacao3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtCidadeActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>

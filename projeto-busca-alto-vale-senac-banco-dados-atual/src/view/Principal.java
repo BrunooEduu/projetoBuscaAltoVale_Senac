@@ -1,8 +1,12 @@
 package view;
 
-import view.FuncoesTelaPrincipal.Administrador;
-import view.FuncoesTelaPrincipal.Cadastrar;
-import view.FuncoesTelaPrincipal.Login;
+import view.Administrador.LoginAdministrador;
+import view.PessoaFisica.CadastroFisico;
+import view.PessoaFisica.LoginFisico;
+import view.PessoaJuridica.CadastroJuridico;
+import view.PessoaJuridica.LoginJuridico;
+
+
 
 /**
  *
@@ -10,11 +14,11 @@ import view.FuncoesTelaPrincipal.Login;
  */
 public class Principal extends javax.swing.JFrame {
 
-    Administrador loginAdm = new Administrador();
     
-    Cadastrar cadastrar = new Cadastrar();
     
-    Login login = new Login();
+    
+    
+    
     
     public Principal() {
         initComponents();
@@ -30,8 +34,12 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        btnLongin = new javax.swing.JMenu();
-        btnCadastrar = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        btnLoginJuridico = new javax.swing.JRadioButtonMenuItem();
+        btnLoginFisico = new javax.swing.JRadioButtonMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        btnCadastrarJuridico = new javax.swing.JRadioButtonMenuItem();
+        btnCadastrarFisico = new javax.swing.JRadioButtonMenuItem();
         btnLoginAdministrador = new javax.swing.JMenu();
         btnSair = new javax.swing.JMenu();
 
@@ -45,21 +53,49 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(jLabel1);
 
-        btnLongin.setText("Login");
-        btnLongin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnLonginMousePressed(evt);
-            }
-        });
-        jMenuBar1.add(btnLongin);
+        jMenu1.setText("Login");
 
-        btnCadastrar.setText("Cadastrar");
-        btnCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                btnCadastrarMousePressed(evt);
+        btnLoginJuridico.setSelected(true);
+        btnLoginJuridico.setText("Pessoa Jurídica");
+        btnLoginJuridico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginJuridicoActionPerformed(evt);
             }
         });
-        jMenuBar1.add(btnCadastrar);
+        jMenu1.add(btnLoginJuridico);
+
+        btnLoginFisico.setSelected(true);
+        btnLoginFisico.setText("Pessoa Física");
+        btnLoginFisico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginFisicoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnLoginFisico);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Cadastrar");
+
+        btnCadastrarJuridico.setSelected(true);
+        btnCadastrarJuridico.setText("Pessoa Jurídica");
+        btnCadastrarJuridico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarJuridicoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnCadastrarJuridico);
+
+        btnCadastrarFisico.setSelected(true);
+        btnCadastrarFisico.setText("Pessoa Física");
+        btnCadastrarFisico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarFisicoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(btnCadastrarFisico);
+
+        jMenuBar1.add(jMenu2);
 
         btnLoginAdministrador.setText("Administrador");
         btnLoginAdministrador.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -86,20 +122,35 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairMousePressed
 
+    private void btnLoginJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginJuridicoActionPerformed
+        LoginJuridico loginJuridico = new LoginJuridico();
+        loginJuridico.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnLoginJuridicoActionPerformed
+
+    private void btnLoginFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginFisicoActionPerformed
+        LoginFisico loginFisico = new LoginFisico();
+        loginFisico.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnLoginFisicoActionPerformed
+
+    private void btnCadastrarJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarJuridicoActionPerformed
+        CadastroJuridico cadastrarJuridico = new CadastroJuridico();
+        cadastrarJuridico.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnCadastrarJuridicoActionPerformed
+
+    private void btnCadastrarFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarFisicoActionPerformed
+        CadastroFisico cadastrarFisico = new CadastroFisico();
+        cadastrarFisico.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnCadastrarFisicoActionPerformed
+
     private void btnLoginAdministradorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginAdministradorMousePressed
-        loginAdm.setVisible(true);
+        LoginAdministrador loginAdministrador = new LoginAdministrador();
+        loginAdministrador.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnLoginAdministradorMousePressed
-
-    private void btnCadastrarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCadastrarMousePressed
-       cadastrar.setVisible(true);
-       dispose();
-    }//GEN-LAST:event_btnCadastrarMousePressed
-
-    private void btnLonginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLonginMousePressed
-        login.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_btnLonginMousePressed
 
     /**
      * @param args the command line arguments
@@ -137,12 +188,16 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu btnCadastrar;
+    private javax.swing.JRadioButtonMenuItem btnCadastrarFisico;
+    private javax.swing.JRadioButtonMenuItem btnCadastrarJuridico;
     private javax.swing.JMenu btnLoginAdministrador;
-    private javax.swing.JMenu btnLongin;
+    private javax.swing.JRadioButtonMenuItem btnLoginFisico;
+    private javax.swing.JRadioButtonMenuItem btnLoginJuridico;
     private javax.swing.JMenu btnSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

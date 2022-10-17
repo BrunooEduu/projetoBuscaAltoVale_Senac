@@ -16,6 +16,7 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
      */
     public ConsultarPessoasInscritas() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,10 +30,10 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
 
         jLabel17 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbPessoasInscritas = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -41,7 +42,7 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbPessoasInscritas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, "", null, null, null},
                 {null, null, null, null, null, null, null},
@@ -52,14 +53,24 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
                 "Nome", "Cidade", "Estado", "Curriculo", "CPF", "Telefone", "E-mail"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbPessoasInscritas);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Pessoas Inscritas");
 
-        jButton1.setText("Sair");
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Voltar");
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(51, 51, 255));
@@ -78,9 +89,9 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
                                 .addComponent(jLabel1)
                                 .addGap(290, 290, 290))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton2)
+                                .addComponent(btnVoltar)
                                 .addGap(32, 32, 32)
-                                .addComponent(jButton1))))
+                                .addComponent(btnSair))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(jScrollPane1)))
@@ -99,8 +110,8 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnSair)
+                    .addComponent(btnVoltar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -108,6 +119,16 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        PainelPessoaJuridica voltarPainelJuridico = new PainelPessoaJuridica();
+        voltarPainelJuridico.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,12 +166,12 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbPessoasInscritas;
     // End of variables declaration//GEN-END:variables
 }
