@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/bruno.burger/Desktop/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/Administrador/LoginAdministrador.java</file>
-            <file>file:/C:/Users/bruno.burger/Desktop/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/controller/ControllerPessoaDB.java</file>
-            <file>file:/C:/Users/bruno.burger/Desktop/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/PessoaFisica/ConsultaEmpresas.java</file>
-            <file>file:/C:/Users/bruno.burger/Desktop/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/lib/script-professor.sql</file>
-            <file>file:/C:/Users/bruno.burger/Desktop/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/PessoaJuridica/ConsultarPessoasInscritas.java</file>
+            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/PainelPadrao.java</file>
+            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/controller/ControllerPessoaDB.java</file>
+            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/PessoaJuridica/PainelPessoaJuridica.java</file>
+            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/ViewConsultaPadrao.java</file>
+            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/PessoaJuridica/LoginJuridico.java</file>
+            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/PessoaJuridica/ConsultarPessoasInscritas.java</file>
+            <file>file:/C:/xampp/htdocs/projeto-integrador-bruno-eduardo/projetoBuscaAltoVale_Senac/projeto-busca-alto-vale-senac-banco-dados-atual/src/view/LoginPadrao.java</file>
         </group>
     </open-files>
 </project-private>

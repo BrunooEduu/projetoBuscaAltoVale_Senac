@@ -1,16 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view.PessoaJuridica;
 
+import view.PainelPadrao;
 import view.Principal;
 
 /**
  *
  * @author raiss
  */
-public class PainelPessoaJuridica extends javax.swing.JFrame {
+public class PainelPessoaJuridica extends PainelPadrao {
 
     /**
      * Creates new form PainelEmpresa
@@ -146,6 +143,8 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
 
     private void btnConsultarPessoasInscritasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarPessoasInscritasActionPerformed
         ConsultarPessoasInscritas consultarPessoasInscritas = new ConsultarPessoasInscritas();
+        // Seta o codigo da pessoa logada no sistema
+        consultarPessoasInscritas.setCodigoPessoaLogada(this.getCodigoPessoaLogada());
         consultarPessoasInscritas.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnConsultarPessoasInscritasActionPerformed
@@ -160,7 +159,6 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
         ExcluirCadastroJuridico excluirCadastro = new ExcluirCadastroJuridico();
         excluirCadastro.setVisible(true);
         dispose();
-        
     }//GEN-LAST:event_btnExcluirCadastroActionPerformed
 
     /**
@@ -170,7 +168,7 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -198,7 +196,6 @@ public class PainelPessoaJuridica extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAlterarCadastro;
     private javax.swing.JButton btnConsultarPessoasInscritas;

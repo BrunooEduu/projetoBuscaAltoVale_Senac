@@ -1,6 +1,5 @@
 package view.PessoaJuridica;
 
-import controller.ControllerPessoaDB;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import model.ModelPessoa;
@@ -18,7 +17,6 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
     public ConsultarPessoasInscritas() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
         // lista ao abrir a tela
         listarTodosRegistros();
     }
@@ -141,7 +139,7 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -168,7 +166,6 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVoltar;
@@ -181,14 +178,11 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
 
     private void listarTodosRegistros() {
         DefaultTableModel modelo = (DefaultTableModel) tabelaDados.getModel();
-
         // Reseta os registros da tabela
         modelo.setRowCount(0);
-
-        // Lista todos registros da tabela
-        int pescodigo = 3; // codigo da empresa
+        // Lista todos registros da tabela para a empresa logada
+        int pescodigo = this.getCodigoPessoaLogada();
         ArrayList<ModelPessoa> pessoas = pessoadb.getTodosInscritos(pescodigo);
-
         // Percorre a lista de pessoas
         for (ModelPessoa auxPessoa : pessoas) {
             modelo.addRow(new Object[]{

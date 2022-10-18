@@ -2,7 +2,6 @@ package view.PessoaJuridica;
 
 import javax.swing.JOptionPane;
 import view.LoginPadrao;
-import view.PessoaFisica.PainelPessoaFisica;
 import view.Principal;
 
 /**
@@ -153,12 +152,14 @@ public class LoginJuridico extends LoginPadrao {
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         String email = edtEmail.getText();
         String senha = edtSenha.getText();
-        if(validaLogin(email, senha)){
+        if (validaLogin(email, senha)) {
+            int codigoPessoaLogada = this.getCodigoPessoaLogada(email, senha);
             PainelPessoaJuridica entrarJuridico = new PainelPessoaJuridica();
-            entrarJuridico.setVisible(true);                   
-            dispose();           
+            entrarJuridico.setCodigoPessoaLogada(codigoPessoaLogada);
+            entrarJuridico.setVisible(true);
+            dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Login/senha inválidos!");  
+            JOptionPane.showMessageDialog(null, "Login/senha inválidos!");
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
@@ -170,7 +171,6 @@ public class LoginJuridico extends LoginPadrao {
         Principal voltarPrincipal = new Principal();
         voltarPrincipal.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void edtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEmailActionPerformed
@@ -184,7 +184,7 @@ public class LoginJuridico extends LoginPadrao {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -211,7 +211,6 @@ public class LoginJuridico extends LoginPadrao {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEntrar;
     private javax.swing.JButton btnSair;
