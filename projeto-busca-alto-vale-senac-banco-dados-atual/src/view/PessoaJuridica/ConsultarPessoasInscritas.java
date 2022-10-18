@@ -1,15 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.PessoaJuridica;
+
+import controller.ControllerPessoaDB;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import model.ModelPessoa;
+import view.ViewConsultaPadrao;
 
 /**
  *
  * @author bruno.sasse
  */
-public class ConsultarPessoasInscritas extends javax.swing.JFrame {
+public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
 
     /**
      * Creates new form ConsultarPessoasInscritas
@@ -17,6 +18,9 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
     public ConsultarPessoasInscritas() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        // lista ao abrir a tela
+        listarTodosRegistros();
     }
 
     /**
@@ -30,7 +34,7 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
 
         jLabel17 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbPessoasInscritas = new javax.swing.JTable();
+        tabelaDados = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
@@ -42,18 +46,18 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tbPessoasInscritas.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, "", null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Nome", "Cidade", "Estado", "Curriculo", "CPF", "Telefone", "E-mail"
+                "Nome", "Cidade", "Estado", "CPF", "Telefone", "E-mail"
             }
         ));
-        jScrollPane1.setViewportView(tbPessoasInscritas);
+        jScrollPane1.setViewportView(tabelaDados);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Pessoas Inscritas");
@@ -172,6 +176,29 @@ public class ConsultarPessoasInscritas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbPessoasInscritas;
+    private javax.swing.JTable tabelaDados;
     // End of variables declaration//GEN-END:variables
+
+    private void listarTodosRegistros() {
+        DefaultTableModel modelo = (DefaultTableModel) tabelaDados.getModel();
+
+        // Reseta os registros da tabela
+        modelo.setRowCount(0);
+
+        // Lista todos registros da tabela
+        int pescodigo = 3; // codigo da empresa
+        ArrayList<ModelPessoa> pessoas = pessoadb.getTodosInscritos(pescodigo);
+
+        // Percorre a lista de pessoas
+        for (ModelPessoa auxPessoa : pessoas) {
+            modelo.addRow(new Object[]{
+                auxPessoa.getNome(),
+                auxPessoa.getCidade(),
+                auxPessoa.getEstado(),
+                auxPessoa.getCpfcnpj(),
+                auxPessoa.getTelefone(),
+                auxPessoa.getEmail()
+            });
+        }
+    }
 }

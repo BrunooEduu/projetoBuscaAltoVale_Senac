@@ -1,21 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view.Administrador;
 
+import javax.swing.JOptionPane;
+import view.LoginPadrao;
 import view.Principal;
-
-
 
 /**
  *
  * @author Bruno
  */
-public class LoginAdministrador extends javax.swing.JFrame {
+public class LoginAdministrador extends LoginPadrao {
     
-    
-
     /**
      * Creates new form sas
      */
@@ -36,10 +30,10 @@ public class LoginAdministrador extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         btnEntrar = new javax.swing.JButton();
-        edtSenhaAdm = new javax.swing.JPasswordField();
+        edtSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        edtCodigoAdm = new javax.swing.JTextField();
+        edtEmail = new javax.swing.JTextField();
         btnSair = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -56,9 +50,10 @@ public class LoginAdministrador extends javax.swing.JFrame {
             }
         });
 
-        edtSenhaAdm.addActionListener(new java.awt.event.ActionListener() {
+        edtSenha.setText("123");
+        edtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtSenhaAdmActionPerformed(evt);
+                edtSenhaActionPerformed(evt);
             }
         });
 
@@ -68,13 +63,14 @@ public class LoginAdministrador extends javax.swing.JFrame {
         jLabel1.setText("LOGIN");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Código do Administrador:");
+        jLabel2.setText("E-mail Administrador:");
 
-        edtCodigoAdm.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        edtCodigoAdm.setToolTipText("");
-        edtCodigoAdm.addActionListener(new java.awt.event.ActionListener() {
+        edtEmail.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        edtEmail.setText("amanda@email.com");
+        edtEmail.setToolTipText("");
+        edtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtCodigoAdmActionPerformed(evt);
+                edtEmailActionPerformed(evt);
             }
         });
 
@@ -110,8 +106,8 @@ public class LoginAdministrador extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(edtCodigoAdm, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(edtSenhaAdm, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(edtEmail, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(edtSenha, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnEntrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(125, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -134,11 +130,11 @@ public class LoginAdministrador extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edtCodigoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edtSenhaAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -173,18 +169,25 @@ public class LoginAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        PainelAdministrador entrarAdministrador = new PainelAdministrador();
-        entrarAdministrador.setVisible(true);
-        dispose();
+        String email = edtEmail.getText();
+        String senha = edtSenha.getText();
+        if(validaLoginAdministrador(email, senha)){
+            PainelAdministrador entrarAdministrador = new PainelAdministrador();
+            entrarAdministrador.setVisible(true);
+            dispose();           
+        } else {
+            JOptionPane.showMessageDialog(null, "Login/senha inválidos!");  
+        }  
+       
     }//GEN-LAST:event_btnEntrarActionPerformed
 
-    private void edtSenhaAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtSenhaAdmActionPerformed
+    private void edtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtSenhaAdmActionPerformed
+    }//GEN-LAST:event_edtSenhaActionPerformed
 
-    private void edtCodigoAdmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCodigoAdmActionPerformed
+    private void edtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtCodigoAdmActionPerformed
+    }//GEN-LAST:event_edtEmailActionPerformed
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
@@ -242,12 +245,26 @@ public class LoginAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnEntrar;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JTextField edtCodigoAdm;
-    private javax.swing.JPasswordField edtSenhaAdm;
+    private javax.swing.JTextField edtEmail;
+    private javax.swing.JPasswordField edtSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private boolean validaLoginAdministrador(String email, String senha) {
+        
+        
+        // inserir um novo administrador no banco de dados
+        //                                             codigo da pessoa que devera ser administrador
+        // insert into tbadministrador(pescodigo)values(3)
+        
+        if(pessoadb.validaLoginAdministrador(email,senha)){
+            return true;
+        }
+        
+        return false;
+    }        
 }

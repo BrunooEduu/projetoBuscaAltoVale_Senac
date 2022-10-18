@@ -26,13 +26,6 @@ CREATE TABLE public.tbpessoajuridica (
 );
 
 
-CREATE TABLE public.tbadministrador (
-	admcodigo serial NOT null,
-	admnome varchar(100) NOT NULL,
-	admsenha varchar(100) not null,
-	CONSTRAINT pk_tbadministrador PRIMARY KEY (admcodigo, admnome)
-);
-
 
 
 

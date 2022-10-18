@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view.Administrador;
 
 import controller.ControllerPessoaDB;
@@ -140,16 +136,10 @@ public class EditarCadastroAdministrador extends javax.swing.JFrame {
         
         if (pessoaBanco.getCodigo() > 0) {
             if(pessoaBanco.getTipo() == ControllerPessoaDB.TIPO_PESSOA_FISICA){
-                CadastroFisico cadastro = new CadastroFisico();
-                
-                // abre o cadastro da pessoa fisica
-                cadastro.setVisible(true);
-            } else if(pessoaBanco.getTipo() == ControllerPessoaDB.TIPO_PESSOA_FISICA){
-                CadastroJuridico cadastro = new CadastroJuridico();
-                
-                cadastro.setPessoa(pessoaBanco);
-                
-                // abre o cadastro da pessoa juridica
+                CadastroFisico cadastro = new CadastroFisico(pessoaBanco);
+                cadastro.setVisible(true);                
+            } else if(pessoaBanco.getTipo() == ControllerPessoaDB.TIPO_PESSOA_JURIDICA){
+                CadastroJuridico cadastro = new CadastroJuridico(pessoaBanco);                
                 cadastro.setVisible(true);
             }
         } else {

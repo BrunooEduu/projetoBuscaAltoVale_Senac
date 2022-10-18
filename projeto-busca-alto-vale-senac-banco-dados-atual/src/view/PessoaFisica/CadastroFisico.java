@@ -20,6 +20,13 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         initComponents();
         this.setLocationRelativeTo(null);        
     }
+    
+    public CadastroFisico(ModelPessoa pessoa) {
+        this.setPessoa(pessoa);
+        
+        initComponents();
+        this.setLocationRelativeTo(null);            
+    }
 
     @Override
     public void setVisible(boolean b) {
@@ -28,8 +35,10 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         // Se existir uma pessoa no modelo, carrega esta pessoa na tela        
         ModelPessoa pessoaCarregadaBanco = this.getPessoa();
         
-        if(pessoaCarregadaBanco.getCodigo() > 0){
-            this.loadDadosPessoaTela();
+        if(pessoaCarregadaBanco != null){
+            if(pessoaCarregadaBanco.getCodigo() > 0){
+                this.loadDadosPessoaTela();
+            }            
         }
         
         // mostra a tela
@@ -67,19 +76,19 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         jLabel2 = new javax.swing.JLabel();
         edtNome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        edtEmailFisico = new javax.swing.JTextField();
+        edtEmail = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnVoltar = new javax.swing.JButton();
         btnSair = new javax.swing.JButton();
-        edtCpf = new javax.swing.JTextField();
-        edtSenhaFisico = new javax.swing.JPasswordField();
+        edtCpfcnpj = new javax.swing.JTextField();
+        edtSenha = new javax.swing.JPasswordField();
         edtConfirmarSenhaFisico = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        edtTelefoneFisico = new javax.swing.JTextField();
+        edtTelefone = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         edtConfirmaEmailFisico = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
@@ -175,9 +184,9 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         jLabel9.setForeground(new java.awt.Color(0, 51, 102));
         jLabel9.setText("Telefone para Contato:");
 
-        edtTelefoneFisico.addActionListener(new java.awt.event.ActionListener() {
+        edtTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtTelefoneFisicoActionPerformed(evt);
+                edtTelefoneActionPerformed(evt);
             }
         });
 
@@ -249,7 +258,7 @@ public class CadastroFisico extends CadastroPessoaPadrao {
                         .addGap(20, 20, 20)
                         .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(51, 51, 51)
-                        .addComponent(edtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(edtCpfcnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jLabel9)
@@ -268,9 +277,9 @@ public class CadastroFisico extends CadastroPessoaPadrao {
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(edtEmailFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65)
-                        .addComponent(edtSenhaFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,7 +300,7 @@ public class CadastroFisico extends CadastroPessoaPadrao {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(edtTelefoneFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(211, 211, 211)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,14 +336,14 @@ public class CadastroFisico extends CadastroPessoaPadrao {
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(edtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtCpfcnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(jLabel7))
                 .addGap(5, 5, 5)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edtTelefoneFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -352,8 +361,8 @@ public class CadastroFisico extends CadastroPessoaPadrao {
                     .addComponent(jLabel10))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edtEmailFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtSenhaFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -392,14 +401,14 @@ public class CadastroFisico extends CadastroPessoaPadrao {
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
         // Seta os dados da tela no modelo de pessoa
         String nome = edtNome.getText();
-        String cpfcnpj = edtCpf.getText();
+        String cpfcnpj = edtCpfcnpj.getText();
         
-        String email = edtEmailFisico.getText();
+        String email = edtEmail.getText();
 //        String emailConfirma = edtConfirmaEmailFisico.getText();
         // valida depois...
         
-        String senha = edtSenhaFisico.getText();
-        String telefone = edtTelefoneFisico.getText();
+        String senha = edtSenha.getText();
+        String telefone = edtTelefone.getText();
         String cidade = edtCidade.getSelectedItem().toString();
         
         String estado = edtEstado.getSelectedItem().toString();
@@ -417,12 +426,14 @@ public class CadastroFisico extends CadastroPessoaPadrao {
             ModelPessoa pessoaBanco = pessoadb.getPessoa(cpfcnpj);
             if (pessoaBanco.getCodigo() > 0) {
                 if(pessoadb.gravarAlteracaoPessoa(pessoa)){
-                    JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!");                    
+                    JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!"); 
+                     // chamar o painel da pessoa   
                 } else {
                     JOptionPane.showMessageDialog(null, "Erro ao gravar alteração do produto!");
                 }
             } else {
                 if(pessoadb.gravarInsercaoPessoa(pessoa)){
+                    // chamar o painel da pessoa                    
                     JOptionPane.showMessageDialog(null, "Cadastro inserido com sucesso!");                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Erro ao inserir produto!");
@@ -455,9 +466,9 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         // TODO add your handling code here:
     }//GEN-LAST:event_edtConfirmaEmailFisicoActionPerformed
 
-    private void edtTelefoneFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtTelefoneFisicoActionPerformed
+    private void edtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtTelefoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtTelefoneFisicoActionPerformed
+    }//GEN-LAST:event_edtTelefoneActionPerformed
 
     private void edtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtEstadoActionPerformed
         // TODO add your handling code here:
@@ -510,12 +521,12 @@ public class CadastroFisico extends CadastroPessoaPadrao {
     private javax.swing.JComboBox<String> edtCidade;
     private javax.swing.JTextField edtConfirmaEmailFisico;
     private javax.swing.JPasswordField edtConfirmarSenhaFisico;
-    private javax.swing.JTextField edtCpf;
-    private javax.swing.JTextField edtEmailFisico;
+    private javax.swing.JTextField edtCpfcnpj;
+    private javax.swing.JTextField edtEmail;
     private javax.swing.JComboBox<String> edtEstado;
     private javax.swing.JTextField edtNome;
-    private javax.swing.JPasswordField edtSenhaFisico;
-    private javax.swing.JTextField edtTelefoneFisico;
+    private javax.swing.JPasswordField edtSenha;
+    private javax.swing.JTextField edtTelefone;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
@@ -547,7 +558,12 @@ public class CadastroFisico extends CadastroPessoaPadrao {
 
     private void loadDadosPessoaTela() {
         edtNome.setText(this.getPessoa().getNome());         
-        edtCpf.setText(this.getPessoa().getCpfcnpj());
+        edtCpfcnpj.setText(this.getPessoa().getCpfcnpj());
+        edtTelefone.setText(this.getPessoa().getTelefone());
+        edtCidade.setSelectedItem(this.getPessoa().getCidade());
+        edtEstado.setSelectedItem(this.getPessoa().getEstado());
+        edtEmail.setText(this.getPessoa().getEmail());
+        edtSenha.setText(this.getPessoa().getSenha());
     }
  }
 

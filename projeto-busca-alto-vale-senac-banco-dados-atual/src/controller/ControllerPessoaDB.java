@@ -222,4 +222,89 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
         
         return executou;
     }
+
+    public boolean validaLogin(String email, String senha) {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        boolean valida = false;
+        
+        try {
+            conn = Conexao.getConexao();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select * from public.tbpessoa where pesemail = '" + email + "' and pessenha='" + senha+"'");
+            if(rs.next()) {
+                valida = true;
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro de conexão! " + erro);
+        } finally {
+            Conexao.closeAll(conn);
+        }
+        
+        return valida;
+    }
+
+    public boolean validaLoginAdministrador(String email, String senha) {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        boolean valida = false;
+        
+        try {
+            conn = Conexao.getConexao();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select * from tbpessoa inner join tbadministrador on (tbadministrador.pescodigo = tbpessoa.pescodigo) "
+                    + " where pesemail = '" + email + "' and pessenha='" + senha+"'");
+            if(rs.next()) {
+                valida = true;
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro de conexão! " + erro);
+        } finally {
+            Conexao.closeAll(conn);
+        }
+        
+        return valida;
+    }
+
+    public ArrayList<ModelPessoa> getTodosInscritos(int pescodigo) {
+        ArrayList listaDados = new ArrayList();
+        
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;        
+        try {
+            conn = Conexao.getConexao();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select * from tbvagasempresa where pescodigo = " + pescodigo);
+            
+            while (rs.next()) {        
+                int codigo = rs.getInt("pescodigo");
+                
+                String nome = rs.getString("pesnome");
+                String cpfcnpj = rs.getString("pescpfcnpj");
+                String email = rs.getString("pesemail");
+                String senha = rs.getString("pessenha");
+                String telefone = rs.getString("pestelefone");
+                String cidade = rs.getString("pescidade");
+                String estado = rs.getString("pesestado");
+                
+                int tipo = rs.getInt("pestipo");
+                
+                String descricao = rs.getString("pesdescricao");
+                String atuacao = rs.getString("pesatuacao");
+                             
+                ModelPessoa pessoa = new ModelPessoa(codigo, nome, cpfcnpj, email, senha, telefone,
+                        cidade, estado, tipo, descricao, atuacao);
+                
+                listaDados.add(pessoa);
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro no sql, getTodos():\n" + erro.getMessage());
+        } finally {
+            Conexao.closeAll(conn);
+        }
+        return listaDados;
+    }
 }

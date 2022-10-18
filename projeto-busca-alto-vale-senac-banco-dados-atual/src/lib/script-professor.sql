@@ -27,14 +27,12 @@ create unique index tbpessoa_cpfcnpj_idx on tbpessoa using btree (pescpfcnpj);
 create unique index tbpessoa_email_idx on tbpessoa using btree (pesemail);
 
 
--- vincular vaga a empresa para usuario ver
-CREATE TABLE public.tbvagasempresa (
-    pescodigo serial NOT null,
-    codigovaga int NOT NULL,
-    CONSTRAINT pk_tbvagasempresa PRIMARY KEY (pescodigo, codigovaga)
+CREATE TABLE public.tbadministrador (
+    pescodigo int NOT null,
+    CONSTRAINT pk_tbadministrador PRIMARY KEY (pescodigo)
 );
 
--- detalhes da vaga
+-- fazer web 
 CREATE TABLE public.tbvagas (
     vagcodigo serial NOT null,
     pescodigo int not null, -- empresa
@@ -43,34 +41,15 @@ CREATE TABLE public.tbvagas (
     CONSTRAINT pk_tbvagas PRIMARY KEY (vagcodigo)
 );
 
+insert into public.tbvagas(pescodigo,vagnome,vagdescricao) values(3, 'PROGRAMADOR DE SISTEMAS PHP', 'FAZER MANUETENCAO DE SISTEMAS EM PHP');
 
+select * from tbvagas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- TIPO DE USUARIO
-CREATE TABLE public.tbtipousuario (
-	tipcodigo serial NOT null,
-	tipnome varchar(100) not null,  --(ADMINISTRADOR, EMPRESA, FUNCIONARIO, ETC)
-	CONSTRAINT pk_tbtipousuario PRIMARY KEY (tipcodigo)
+CREATE TABLE public.tbvagasempresa (
+    pescodigo serial NOT null,
+    codigovaga int NOT NULL,
+    CONSTRAINT pk_tbvagasempresa PRIMARY KEY (pescodigo, codigovaga)
 );
 
 
--- Ligacao de usuario com tipos de usuarios 
--- Cada pessoa pertence a um tipo de usuario 
-CREATE TABLE public.tbpessoatipousuario (
-    pescodigo int not null,
-    tipcodigo int not null,
-    CONSTRAINT pk_tbpessoatipousuario PRIMARY KEY (pescodigo,tipcodigo)
-);
+insert into public.tbvagasempresa (PESCODIGO, codigovaga) values (3,1);

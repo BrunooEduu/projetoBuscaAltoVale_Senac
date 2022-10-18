@@ -21,4 +21,8 @@ public class CadastroPessoaPadrao extends javax.swing.JFrame {
     public void setPessoa(ModelPessoa pessoa) {
         this.pessoa = pessoa;
     }
+
+    public CadastroPessoaPadrao(ModelPessoa pessoa) {
+        this.pessoa = pessoa;
+    }
 }

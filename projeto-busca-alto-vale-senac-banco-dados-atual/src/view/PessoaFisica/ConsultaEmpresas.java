@@ -1,19 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.PessoaFisica;
 
-  
-        
-    public class ConsultaEmpresas extends javax.swing.JFrame {
+import controller.ControllerPessoaDB;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import model.ModelPessoa;
+import view.ViewConsultaPadrao;
 
-   // PainelPessoaFisica teste = new PainelPessoaFisica();
+public class ConsultaEmpresas extends ViewConsultaPadrao  {
+
+    // PainelPessoaFisica teste = new PainelPessoaFisica();
     
     public ConsultaEmpresas() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        
+        // lista ao abrir a tela
+        listarTodosRegistros();
     }
 
     /**
@@ -29,7 +32,7 @@ package view.PessoaFisica;
         jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaDados = new javax.swing.JTable();
         btnCadastrarVaga = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -51,50 +54,42 @@ package view.PessoaFisica;
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Empresas Cadastradas Busca Job's");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"", "", "", "", null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, "", "", "", null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Razão Social", "CNPJ", "Cidade", "E-mail", "Telefone", "Vagas Disponíveis"
+                "Razão Social", "CNPJ", "Cidade", "E-mail", "Telefone", "Atuacao", "Descricao"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Float.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jTable1.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
-        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTable1.setMaximumSize(new java.awt.Dimension(2147483647, 400));
-        jTable1.setShowGrid(true);
-        jScrollPane2.setViewportView(jTable1);
+        ));
+        tabelaDados.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_NEXT_COLUMN);
+        tabelaDados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tabelaDados.setMaximumSize(new java.awt.Dimension(2147483647, 400));
+        tabelaDados.setShowGrid(true);
+        jScrollPane2.setViewportView(tabelaDados);
 
         btnCadastrarVaga.setText("Cadastrar");
         btnCadastrarVaga.addActionListener(new java.awt.event.ActionListener() {
@@ -256,10 +251,29 @@ package view.PessoaFisica;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabelaDados;
     // End of variables declaration//GEN-END:variables
 
-   
+    private void listarTodosRegistros() {
+        DefaultTableModel modelo = (DefaultTableModel) tabelaDados.getModel();
 
-    
+        // Reseta os registros da tabela
+        modelo.setRowCount(0);
+
+        // Lista todos registros da tabela
+        ArrayList<ModelPessoa> pessoas = pessoadb.getTodos(ControllerPessoaDB.TIPO_PESSOA_JURIDICA);
+
+        // Percorre a lista de pessoas
+        for (ModelPessoa auxPessoa : pessoas) {
+            modelo.addRow(new Object[]{
+                auxPessoa.getNome(),
+                auxPessoa.getCpfcnpj(),
+                auxPessoa.getCidade(),
+                auxPessoa.getEmail(),
+                auxPessoa.getTelefone(),
+                auxPessoa.getAtuacao(),
+                auxPessoa.getDescricao()
+            });
+        }
+    }
 }

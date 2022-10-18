@@ -78,7 +78,7 @@
     </Component>
   </NonVisualComponents>
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -117,15 +117,15 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
-                      <Component id="edtRazaoSocial" min="-2" pref="452" max="-2" attributes="0"/>
+                      <Component id="edtNome" min="-2" pref="452" max="-2" attributes="0"/>
                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                      <Component id="edtCnpj" min="-2" pref="242" max="-2" attributes="0"/>
+                      <Component id="edtCpfcnpj" min="-2" pref="242" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="edtTelefoneJuridico" min="-2" pref="237" max="-2" attributes="0"/>
+                          <Component id="edtTelefone" min="-2" pref="237" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="164" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -169,9 +169,9 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
-                      <Component id="edtEmailJuridico" min="-2" pref="382" max="-2" attributes="0"/>
+                      <Component id="edtEmail" min="-2" pref="382" max="-2" attributes="0"/>
                       <EmptySpace min="71" pref="71" max="-2" attributes="0"/>
-                      <Component id="edtSenhaJuridico" min="-2" pref="259" max="-2" attributes="0"/>
+                      <Component id="edtSenha" min="-2" pref="259" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="35" pref="35" max="-2" attributes="0"/>
@@ -227,8 +227,8 @@
               </Group>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="edtRazaoSocial" min="-2" max="-2" attributes="0"/>
-                  <Component id="edtCnpj" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtNome" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtCpfcnpj" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -237,7 +237,7 @@
               </Group>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="edtTelefoneJuridico" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtTelefone" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="edtCidade" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -268,8 +268,8 @@
               </Group>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="edtEmailJuridico" min="-2" max="-2" attributes="0"/>
-                  <Component id="edtSenhaJuridico" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtEmail" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtSenha" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -301,7 +301,7 @@
         <Property name="text" type="java.lang.String" value="Raz&#xe3;o Social:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="edtRazaoSocial">
+    <Component class="javax.swing.JTextField" name="edtNome">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -311,7 +311,7 @@
         <Property name="text" type="java.lang.String" value="CNPJ:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="edtCnpj">
+    <Component class="javax.swing.JTextField" name="edtCpfcnpj">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -367,7 +367,7 @@
         <Property name="text" type="java.lang.String" value="Senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="edtSenhaJuridico">
+    <Component class="javax.swing.JPasswordField" name="edtSenha">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -387,13 +387,10 @@
         <Property name="text" type="java.lang.String" value="E-mail:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="edtEmailJuridico">
+    <Component class="javax.swing.JTextField" name="edtEmail">
     </Component>
     <Component class="javax.swing.JButton" name="btnSair">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/Knob Cancel.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
@@ -435,9 +432,6 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnConfirmar">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/Knob Valid Green.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Confirmar"/>
       </Properties>
       <Events>
@@ -452,7 +446,7 @@
         <Property name="text" type="java.lang.String" value="Telefone para contato:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="edtTelefoneJuridico">
+    <Component class="javax.swing.JTextField" name="edtTelefone">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel14">
       <Properties>
