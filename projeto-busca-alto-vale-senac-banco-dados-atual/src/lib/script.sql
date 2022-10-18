@@ -32,3 +32,7 @@ CREATE TABLE public.tbadministrador (
 	admsenha varchar(100) not null,
 	CONSTRAINT pk_tbadministrador PRIMARY KEY (admcodigo, admnome)
 );
+
+
+
+

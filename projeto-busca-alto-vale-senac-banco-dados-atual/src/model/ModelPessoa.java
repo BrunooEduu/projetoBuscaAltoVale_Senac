@@ -32,6 +32,23 @@ public class ModelPessoa {
         this.atuacao = atuacao;
     }
 
+    public ModelPessoa(String nome, String cpfcnpj, String email, String senha, String telefone, String cidade, String estado, int tipo, String descricao, String atuacao) {
+        this.nome = nome;
+        this.cpfcnpj = cpfcnpj;
+        this.email = email;
+        this.senha = senha;
+        this.telefone = telefone;
+        this.cidade = cidade;
+        this.estado = estado;
+        this.tipo = tipo;
+        this.descricao = descricao;
+        this.atuacao = atuacao;
+    }
+
+    public ModelPessoa() {
+       
+    }
+
     public int getCodigo() {
         return codigo;
     }
@@ -119,6 +136,5 @@ public class ModelPessoa {
     public void setAtuacao(String atuacao) {
         this.atuacao = atuacao;
     }
-
 
 }

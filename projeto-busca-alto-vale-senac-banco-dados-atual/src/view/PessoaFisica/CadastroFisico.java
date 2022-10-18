@@ -1,5 +1,9 @@
 package view.PessoaFisica;
 
+import controller.ControllerPessoaDB;
+import javax.swing.JOptionPane;
+import model.ModelPessoa;
+import view.Administrador.CadastroPessoaPadrao;
 import view.Principal;
 
 
@@ -8,15 +12,35 @@ import view.Principal;
  *
  * @author guilherme.schroder
  */
-public class CadastroFisico extends javax.swing.JFrame {
+public class CadastroFisico extends CadastroPessoaPadrao {
 
+    ControllerPessoaDB pessoadb = new ControllerPessoaDB();
     
-
     public CadastroFisico() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);        
     }
 
+    @Override
+    public void setVisible(boolean b) {
+        
+        // antes de mostrar a tela, seta os dados do banco se existir
+        // Se existir uma pessoa no modelo, carrega esta pessoa na tela        
+        ModelPessoa pessoaCarregadaBanco = this.getPessoa();
+        
+        if(pessoaCarregadaBanco.getCodigo() > 0){
+            this.loadDadosPessoaTela();
+        }
+        
+        // mostra a tela
+        super.setVisible(b);
+    }
+
+    
+    private boolean validaCamposVazios(){
+        return true;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -366,10 +390,57 @@ public class CadastroFisico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        PainelPessoaFisica confirmarFisico = new PainelPessoaFisica();
-        confirmarFisico.setVisible(true);
-        dispose();
-
+        // Seta os dados da tela no modelo de pessoa
+        String nome = edtNome.getText();
+        String cpfcnpj = edtCpf.getText();
+        
+        String email = edtEmailFisico.getText();
+//        String emailConfirma = edtConfirmaEmailFisico.getText();
+        // valida depois...
+        
+        String senha = edtSenhaFisico.getText();
+        String telefone = edtTelefoneFisico.getText();
+        String cidade = edtCidade.getSelectedItem().toString();
+        
+        String estado = edtEstado.getSelectedItem().toString();
+        int tipo = ControllerPessoaDB.TIPO_PESSOA_FISICA;
+        
+        String descricao = "";
+        String atuacao = "";
+        
+        // valida campos vazios
+        if(validaCamposVazios()){            
+            ModelPessoa pessoa = new ModelPessoa(nome, cpfcnpj, email, senha, telefone,
+                        cidade, estado, tipo, descricao, atuacao);
+                    
+            // Verificar se existe o registro no banco de dados            
+            ModelPessoa pessoaBanco = pessoadb.getPessoa(cpfcnpj);
+            if (pessoaBanco.getCodigo() > 0) {
+                if(pessoadb.gravarAlteracaoPessoa(pessoa)){
+                    JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!");                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro ao gravar alteração do produto!");
+                }
+            } else {
+                if(pessoadb.gravarInsercaoPessoa(pessoa)){
+                    JOptionPane.showMessageDialog(null, "Cadastro inserido com sucesso!");                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro ao inserir produto!");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Existem campos nao preenchidos!");
+        }        
+        
+        
+        
+        
+        
+        
+//        //Apos ter sido cadastrado com sucesso, abre o painel da pessoa fisica
+//        PainelPessoaFisica confirmarFisico = new PainelPessoaFisica();
+//        confirmarFisico.setVisible(true);
+//        dispose();
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed
@@ -473,6 +544,11 @@ public class CadastroFisico extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void loadDadosPessoaTela() {
+        edtNome.setText(this.getPessoa().getNome());         
+        edtCpf.setText(this.getPessoa().getCpfcnpj());
+    }
  }
 
 

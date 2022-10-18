@@ -4,20 +4,48 @@
  */
 package view.Administrador;
 
+import controller.ControllerPessoaDB;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import model.ModelPessoa;
+
 /**
  *
  * @author Bruno
  */
 public class ListarCadastroTabelaJuridico extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TabelaJuridico
-     */
+    ControllerPessoaDB pessoadb = new ControllerPessoaDB();
+    
+    
     public ListarCadastroTabelaJuridico() {
         initComponents();
         this.setLocationRelativeTo(null);
+        listarTodosRegistros();
     }
+    
+    
 
+    private void listarTodosRegistros() {
+        DefaultTableModel modelo = (DefaultTableModel) tbTabelaJuridico.getModel();
+
+        // Reseta os registros da tabela
+        modelo.setRowCount(0);
+
+        // Lista todos registros da tabela
+        ArrayList<ModelPessoa> pessoas = pessoadb.getTodos(ControllerPessoaDB.TIPO_PESSOA_JURIDICA);
+
+        // Percorre a lista de dados
+        for (ModelPessoa auxPessoa : pessoas) {
+            modelo.addRow(new Object[]{
+                auxPessoa.getCodigo(),
+                auxPessoa.getNome(),
+                auxPessoa.getCpfcnpj(),
+                auxPessoa.getEmail(),
+                auxPessoa.getTelefone()
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

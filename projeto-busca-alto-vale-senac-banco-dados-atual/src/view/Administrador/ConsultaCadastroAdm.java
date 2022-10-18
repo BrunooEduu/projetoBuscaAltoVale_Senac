@@ -139,8 +139,8 @@ public class ConsultaCadastroAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnConsultarFisicoActionPerformed
 
     private void btnConsultarJuridicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarJuridicoActionPerformed
-        ListarCadastroTabelaJuridico consultarCadastroJuridico = new ListarCadastroTabelaJuridico();
-        consultarCadastroJuridico.setVisible(true);
+        ListarCadastroTabelaJuridico consultarJuridico = new ListarCadastroTabelaJuridico();
+        consultarJuridico.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnConsultarJuridicoActionPerformed
 

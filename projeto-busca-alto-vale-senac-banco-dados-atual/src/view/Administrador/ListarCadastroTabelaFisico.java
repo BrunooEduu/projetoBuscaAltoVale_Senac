@@ -1,8 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view.Administrador;
+
+import controller.ControllerPessoaDB;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import model.ModelPessoa;
 
 /**
  *
@@ -10,14 +11,39 @@ package view.Administrador;
  */
 public class ListarCadastroTabelaFisico extends javax.swing.JFrame {
 
+    ControllerPessoaDB pessoadb = new ControllerPessoaDB();
+    
     /**
      * Creates new form TabelaFisico
      */
     public ListarCadastroTabelaFisico() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        listarTodosRegistros();
     }
 
+    private void listarTodosRegistros() {
+        DefaultTableModel modelo = (DefaultTableModel) tbTabelaFisico.getModel();
+
+        // Reseta os registros da tabela
+        modelo.setRowCount(0);
+
+        // Lista todos registros da tabela
+        ArrayList<ModelPessoa> pessoas = pessoadb.getTodos(ControllerPessoaDB.TIPO_PESSOA_FISICA);
+
+        // Percorre a lista de dados
+        for (ModelPessoa auxPessoa : pessoas) {
+            modelo.addRow(new Object[]{
+                auxPessoa.getCodigo(),
+                auxPessoa.getNome(),
+                auxPessoa.getCpfcnpj(),
+                auxPessoa.getEmail(),
+                auxPessoa.getTelefone()
+            });
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,6 +61,7 @@ public class ListarCadastroTabelaFisico extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         edtPesquisar = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        btnPesquisar = new javax.swing.JButton();
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 102, 0));
@@ -72,6 +99,13 @@ public class ListarCadastroTabelaFisico extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(51, 51, 255));
         jLabel6.setText("Busca Job's");
 
+        btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,16 +116,19 @@ public class ListarCadastroTabelaFisico extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(edtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 381, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnVoltar))
+                        .addComponent(btnPesquisar)
+                        .addGap(149, 149, 149))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(165, 165, 165)
-                .addComponent(jLabel6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVoltar)
+                    .addComponent(jLabel6))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -108,7 +145,8 @@ public class ListarCadastroTabelaFisico extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
                     .addComponent(jLabel2)
-                    .addComponent(edtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPesquisar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25))
@@ -122,6 +160,10 @@ public class ListarCadastroTabelaFisico extends javax.swing.JFrame {
         voltarPainelAdministrador.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        listarTodosRegistros();
+    }//GEN-LAST:event_btnPesquisarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,6 +202,7 @@ public class ListarCadastroTabelaFisico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnPesquisar;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JTextField edtPesquisar;
     private javax.swing.JLabel jLabel1;

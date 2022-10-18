@@ -26,9 +26,38 @@ create unique index tbpessoa_cpfcnpj_idx on tbpessoa using btree (pescpfcnpj);
 -- Nao deixa cadastrar 2 e-mail iguais
 create unique index tbpessoa_email_idx on tbpessoa using btree (pesemail);
 
--- FK DE EMPRESA PARA PESSOA
-alter table public.tbempresa add CONSTRAINT "FK_TBEMPRESA=>TBPESSOA" FOREIGN KEY (pescodigo)
-REFERENCES public.tbpessoa(pescodigo);
+
+-- vincular vaga a empresa para usuario ver
+CREATE TABLE public.tbvagasempresa (
+    pescodigo serial NOT null,
+    codigovaga int NOT NULL,
+    CONSTRAINT pk_tbvagasempresa PRIMARY KEY (pescodigo, codigovaga)
+);
+
+-- detalhes da vaga
+CREATE TABLE public.tbvagas (
+    vagcodigo serial NOT null,
+    pescodigo int not null, -- empresa
+    vagnome varchar (300) NOT NULL, -- gerente producao
+    vagdescricao varchar (300) NOT NULL, -- requisitos, atividades a desenvolver
+    CONSTRAINT pk_tbvagas PRIMARY KEY (vagcodigo)
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 -- TIPO DE USUARIO
 CREATE TABLE public.tbtipousuario (
@@ -41,7 +70,7 @@ CREATE TABLE public.tbtipousuario (
 -- Ligacao de usuario com tipos de usuarios 
 -- Cada pessoa pertence a um tipo de usuario 
 CREATE TABLE public.tbpessoatipousuario (
-	pescodigo int not null,
-	tipcodigo int not null,
-	CONSTRAINT pk_tbpessoatipousuario PRIMARY KEY (pescodigo,tipcodigo)
+    pescodigo int not null,
+    tipcodigo int not null,
+    CONSTRAINT pk_tbpessoatipousuario PRIMARY KEY (pescodigo,tipcodigo)
 );

@@ -1,17 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.PessoaJuridica;
 
+import view.Administrador.CadastroPessoaPadrao;
 import view.Principal;
 
 /**
  *
  * @author bruno.sasse
  */
-public class CadastroJuridico extends javax.swing.JFrame {
+public class CadastroJuridico extends CadastroPessoaPadrao {
 
     /**
      * Creates new form CadastroEmpresa

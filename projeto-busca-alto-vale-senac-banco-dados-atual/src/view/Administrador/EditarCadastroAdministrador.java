@@ -4,12 +4,20 @@
  */
 package view.Administrador;
 
+import controller.ControllerPessoaDB;
+import javax.swing.JOptionPane;
+import model.ModelPessoa;
+import view.PessoaFisica.CadastroFisico;
+import view.PessoaJuridica.CadastroJuridico;
+
 /**
  *
  * @author raiss
  */
 public class EditarCadastroAdministrador extends javax.swing.JFrame {
 
+    ControllerPessoaDB pessoadb = new ControllerPessoaDB();
+    
     /**
      * Creates new form ConsultarCadastroAdministrador
      */
@@ -49,6 +57,11 @@ public class EditarCadastroAdministrador extends javax.swing.JFrame {
         });
 
         btnConfirmar.setText("Confirmar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +131,31 @@ public class EditarCadastroAdministrador extends javax.swing.JFrame {
         voltarPainelAdministrador.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        // Busca a pessoa pelo cpfcnpj
+        String cpfcnpj = edtCpfOuCnpj.getText();
+        
+        ModelPessoa pessoaBanco = pessoadb.getPessoa(cpfcnpj);
+        
+        if (pessoaBanco.getCodigo() > 0) {
+            if(pessoaBanco.getTipo() == ControllerPessoaDB.TIPO_PESSOA_FISICA){
+                CadastroFisico cadastro = new CadastroFisico();
+                
+                // abre o cadastro da pessoa fisica
+                cadastro.setVisible(true);
+            } else if(pessoaBanco.getTipo() == ControllerPessoaDB.TIPO_PESSOA_FISICA){
+                CadastroJuridico cadastro = new CadastroJuridico();
+                
+                cadastro.setPessoa(pessoaBanco);
+                
+                // abre o cadastro da pessoa juridica
+                cadastro.setVisible(true);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Não existe pessoa/empresa cadastrada com este cpf/cnpj!");  
+        }        
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
