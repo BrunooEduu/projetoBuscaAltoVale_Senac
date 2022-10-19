@@ -1,5 +1,7 @@
 package view.PessoaJuridica;
 
+import controller.ControllerPessoaDB;
+import javax.swing.JOptionPane;
 import model.ModelPessoa;
 import view.Administrador.CadastroPessoaPadrao;
 import view.Principal;
@@ -10,6 +12,7 @@ import view.Principal;
  */
 public class CadastroJuridico extends CadastroPessoaPadrao {
 
+        ControllerPessoaDB pessoadb = new ControllerPessoaDB();
     
     public CadastroJuridico() {
         initComponents();
@@ -35,6 +38,10 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
      
         // mostra a tela
         super.setVisible(b);
+    }
+   
+    private boolean validaCamposVazios(){
+        return true;
     }
     
     
@@ -64,7 +71,7 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
         jLabel6 = new javax.swing.JLabel();
         edtSenha = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
-        edtConfirmaSenhaJuridico = new javax.swing.JPasswordField();
+        edtConfirmaSenha = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         edtEmail = new javax.swing.JTextField();
         btnSair = new javax.swing.JButton();
@@ -75,7 +82,7 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
         jLabel2 = new javax.swing.JLabel();
         edtTelefone = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        edtConfirmaEmailJuridico = new javax.swing.JTextField();
+        edtConfirmaEmail = new javax.swing.JTextField();
         edtAtuacao = new javax.swing.JComboBox<>();
         btnVoltar = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
@@ -269,9 +276,9 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnSair))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(edtConfirmaEmailJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edtConfirmaEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(71, 71, 71)
-                                .addComponent(edtConfirmaSenhaJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(edtConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(232, 232, 232)
@@ -339,8 +346,8 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
                     .addComponent(jLabel7))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edtConfirmaEmailJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtConfirmaSenhaJuridico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtConfirmaEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -371,9 +378,70 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        PainelPessoaJuridica confirmarJuridico = new PainelPessoaJuridica();
-        confirmarJuridico.setVisible(true);
-        dispose();
+         // Seta os dados da tela no modelo de pessoa
+        String nome = edtNome.getText();
+        String cpfcnpj = edtCpfcnpj.getText();
+
+        String email = edtEmail.getText(); 
+        String emailConfirma = edtConfirmaEmail.getText();
+        
+        String senha = edtSenha.getText();
+        String senhaConfirma = edtConfirmaSenha.getText();
+        
+        String telefone = edtTelefone.getText();
+        String cidade = edtCidade.getSelectedItem().toString();
+        String estado = edtEstado.getSelectedItem().toString();
+        int tipo = ControllerPessoaDB.TIPO_PESSOA_JURIDICA;
+        String descricao = edtDescricao.getText();
+        String atuacao = edtAtuacao.getSelectedItem().toString();
+        
+        //confirmar email 
+        if (email.equals(emailConfirma) && senha.equals(senhaConfirma) ) {
+            
+            if(validaCamposVazios()){            
+            ModelPessoa pessoa = new ModelPessoa(nome, cpfcnpj, email, senha, telefone,
+                        cidade, estado, tipo, descricao, atuacao);
+                    
+            // Verificar se existe o registro no banco de dados            
+            ModelPessoa pessoaBanco = pessoadb.getPessoa(cpfcnpj);
+            if (pessoaBanco.getCodigo() > 0) {
+                if(pessoadb.gravarAlteracaoPessoa(pessoa)){
+                    JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!"); 
+                     // chamar o painel da pessoa   
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro ao gravar alteração do produto!");
+                }
+            } else {
+                if(pessoadb.gravarInsercaoPessoa(pessoa)){
+                    // chamar o painel da pessoa 
+                    JOptionPane.showMessageDialog(null, "Cadastro inserido com sucesso!");
+                    PainelPessoaJuridica confirmarJuridico = new PainelPessoaJuridica();
+                    confirmarJuridico.setVisible(true);
+                    dispose();
+                    
+                    
+                } else {
+                    JOptionPane.showMessageDialog(null, "Erro ao inserir produto!");
+                }
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Existem campos nao preenchidos!");
+          }    
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "E-mail ou senha não são iguais!!");
+        }
+        
+        
+        
+        
+        
+    
+        // valida campos vazios
+        
+        
+        
+        
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void edtCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCidadeActionPerformed
@@ -423,8 +491,8 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
     private javax.swing.JComboBox<String> edtAtuacao;
     private javax.swing.JComboBox<String> edtAtuacao2;
     private javax.swing.JComboBox<String> edtCidade;
-    private javax.swing.JTextField edtConfirmaEmailJuridico;
-    private javax.swing.JPasswordField edtConfirmaSenhaJuridico;
+    private javax.swing.JTextField edtConfirmaEmail;
+    private javax.swing.JPasswordField edtConfirmaSenha;
     private javax.swing.JTextField edtCpfcnpj;
     private javax.swing.JTextArea edtDescricao;
     private javax.swing.JTextField edtEmail;

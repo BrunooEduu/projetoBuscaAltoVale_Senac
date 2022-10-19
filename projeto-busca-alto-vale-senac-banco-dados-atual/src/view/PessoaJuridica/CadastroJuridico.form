@@ -190,9 +190,9 @@
                               <Component id="btnSair" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="edtConfirmaEmailJuridico" min="-2" pref="382" max="-2" attributes="0"/>
+                              <Component id="edtConfirmaEmail" min="-2" pref="382" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                              <Component id="edtConfirmaSenhaJuridico" min="-2" pref="259" max="-2" attributes="0"/>
+                              <Component id="edtConfirmaSenha" min="-2" pref="259" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -278,8 +278,8 @@
               </Group>
               <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="edtConfirmaEmailJuridico" min="-2" max="-2" attributes="0"/>
-                  <Component id="edtConfirmaSenhaJuridico" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtConfirmaEmail" min="-2" max="-2" attributes="0"/>
+                  <Component id="edtConfirmaSenha" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -377,7 +377,7 @@
         <Property name="text" type="java.lang.String" value="Confirme a senha:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="edtConfirmaSenhaJuridico">
+    <Component class="javax.swing.JPasswordField" name="edtConfirmaSenha">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -456,7 +456,7 @@
         <Property name="text" type="java.lang.String" value="Confirme E-mail:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="edtConfirmaEmailJuridico">
+    <Component class="javax.swing.JTextField" name="edtConfirmaEmail">
     </Component>
     <Component class="javax.swing.JComboBox" name="edtAtuacao">
       <Properties>

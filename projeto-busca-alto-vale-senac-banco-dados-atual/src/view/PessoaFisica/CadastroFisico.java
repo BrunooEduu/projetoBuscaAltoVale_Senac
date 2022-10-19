@@ -404,10 +404,12 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         String cpfcnpj = edtCpfcnpj.getText();
         
         String email = edtEmail.getText();
-//        String emailConfirma = edtConfirmaEmailFisico.getText();
-        // valida depois...
+        String emailConfirma = edtConfirmaEmailFisico.getText();
+        
         
         String senha = edtSenha.getText();
+        String senhaConfirma = edtConfirmarSenhaFisico.getText();
+        
         String telefone = edtTelefone.getText();
         String cidade = edtCidade.getSelectedItem().toString();
         
@@ -417,7 +419,8 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         String descricao = "";
         String atuacao = "";
         
-        // valida campos vazios
+        if (email.equals(emailConfirma) && senha.equals(senhaConfirma)) {
+            // valida campos vazios
         if(validaCamposVazios()){            
             ModelPessoa pessoa = new ModelPessoa(nome, cpfcnpj, email, senha, telefone,
                         cidade, estado, tipo, descricao, atuacao);
@@ -441,7 +444,13 @@ public class CadastroFisico extends CadastroPessoaPadrao {
             }
         } else {
             JOptionPane.showMessageDialog(null, "Existem campos nao preenchidos!");
-        }        
+          }    
+        
+        } else {
+            JOptionPane.showMessageDialog(null, "E-mail ou senha não são iguais!!");
+        }
+        
+        
         
         
         

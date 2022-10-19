@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import model.ModelPessoa;
 import view.Conexao;
 
@@ -61,7 +62,22 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
         return listaDados;
     }
 
-    public boolean excluirProduto(int codigoProduto) {
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    public boolean excluirPessoa(String pesCpfCnpj) {
+        
         Connection conn = null;
         Statement stmt = null;
         PreparedStatement pstmt = null;
@@ -69,8 +85,8 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
         try {
             conn = Conexao.getConexao();
             stmt = conn.createStatement();
-            pstmt = conn.prepareStatement("delete from tbproduto where procodigo = ?");
-            pstmt.setInt(1, codigoProduto);
+            pstmt = conn.prepareStatement("delete from tbpessoa where pesCpfCnpj = ?");
+            pstmt.setString(1, pesCpfCnpj);
             pstmt.executeUpdate();
             executou = true;
         } catch (SQLException erro) {
@@ -79,7 +95,57 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
             Conexao.closeAll(conn);
         }
         return executou;
+                
     }
+    
+    public boolean procurarPessoa(String pescpfcnpj) {
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        boolean existe = false;
+        try {
+            conn = Conexao.getConexao();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery("select *  "
+                    + "from tbpessoa where pescpfcnpj = " + pescpfcnpj);
+            if(rs.next()) {
+               existe = true;
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro de conexão! " + erro);
+        } finally {
+            Conexao.closeAll(conn);
+        }
+        
+        return existe;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     public ModelPessoa getPessoa(String cpfcnpj) {
         Connection conn = null;
@@ -280,4 +346,14 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
         }
         return codigo;
     }
+
+    public boolean excluirPessoa(JTextField edtCpfCnpj) {
+        
+    
+        
+        return false;
+        
+    
+        
+    } 
 }
