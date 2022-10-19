@@ -36,6 +36,7 @@ public class PainelPessoaFisica extends PainelPadrao {
         btnVoltar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jTextField3.setText("jTextField3");
 
@@ -89,6 +90,13 @@ public class PainelPessoaFisica extends PainelPadrao {
         jLabel4.setForeground(new java.awt.Color(51, 51, 255));
         jLabel4.setText("Busca Job's");
 
+        jButton1.setText("Vagas Empresa");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -114,10 +122,12 @@ public class PainelPessoaFisica extends PainelPadrao {
                         .addGap(230, 230, 230)
                         .addComponent(btnVoltar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnSair)))
-                .addGap(70, 70, 70))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel4)
+                        .addComponent(btnSair))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(169, 169, 169)
+                            .addComponent(jButton1))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -135,7 +145,9 @@ public class PainelPessoaFisica extends PainelPadrao {
                 .addComponent(btnAlterarCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addComponent(btnExcluirCadastroFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,6 +191,12 @@ public class PainelPessoaFisica extends PainelPadrao {
         dispose();
     }//GEN-LAST:event_btnExcluirCadastroFisicoActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ConsultaVagasEmpresas consulta = new ConsultaVagasEmpresas();
+        consulta.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -220,6 +238,7 @@ public class PainelPessoaFisica extends PainelPadrao {
     private javax.swing.JButton btnExcluirCadastroFisico;
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JSeparator jSeparator1;

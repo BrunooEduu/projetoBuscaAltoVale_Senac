@@ -33,7 +33,7 @@ CREATE TABLE public.tbadministrador (
 );
 
 -- fazer web 
-CREATE TABLE public.tbvagas (
+CREATE TABLE public.tbvagas ( -- empresa, vaga nome descricao
     vagcodigo serial NOT null,
     pescodigo int not null, -- empresa
     vagnome varchar (300) NOT NULL, -- gerente producao

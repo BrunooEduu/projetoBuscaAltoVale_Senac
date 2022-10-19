@@ -378,7 +378,7 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
     }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-         // Seta os dados da tela no modelo de pessoa
+        // Seta os dados da tela no modelo de pessoa
         String nome = edtNome.getText();
         String cpfcnpj = edtCpfcnpj.getText();
 
@@ -431,17 +431,6 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
         } else {
             JOptionPane.showMessageDialog(null, "E-mail ou senha não são iguais!!");
         }
-        
-        
-        
-        
-        
-    
-        // valida campos vazios
-        
-        
-        
-        
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void edtCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCidadeActionPerformed

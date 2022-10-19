@@ -402,56 +402,52 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         // Seta os dados da tela no modelo de pessoa
         String nome = edtNome.getText();
         String cpfcnpj = edtCpfcnpj.getText();
-        
+
         String email = edtEmail.getText();
-//        String emailConfirma = edtConfirmaEmailFisico.getText();
-        // valida depois...
-        
+        String emailConfirma = edtConfirmaEmailFisico.getText();
+
         String senha = edtSenha.getText();
+        String senhaConfirma = edtConfirmarSenhaFisico.getText();
+
         String telefone = edtTelefone.getText();
         String cidade = edtCidade.getSelectedItem().toString();
-        
+
         String estado = edtEstado.getSelectedItem().toString();
         int tipo = ControllerPessoaDB.TIPO_PESSOA_FISICA;
-        
+
         String descricao = "";
         String atuacao = "";
-        
-        // valida campos vazios
-        if(validaCamposVazios()){            
-            ModelPessoa pessoa = new ModelPessoa(nome, cpfcnpj, email, senha, telefone,
+
+        if (email.equals(emailConfirma) && senha.equals(senhaConfirma)) {
+            // valida campos vazios
+            if (validaCamposVazios()) {
+                ModelPessoa pessoa = new ModelPessoa(nome, cpfcnpj, email, senha, telefone,
                         cidade, estado, tipo, descricao, atuacao);
-                    
-            // Verificar se existe o registro no banco de dados            
-            ModelPessoa pessoaBanco = pessoadb.getPessoa(cpfcnpj);
-            if (pessoaBanco.getCodigo() > 0) {
-                if(pessoadb.gravarAlteracaoPessoa(pessoa)){
-                    JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!"); 
-                     // chamar o painel da pessoa   
+
+                // Verificar se existe o registro no banco de dados            
+                ModelPessoa pessoaBanco = pessoadb.getPessoa(cpfcnpj);
+                if (pessoaBanco.getCodigo() > 0) {
+                    if (pessoadb.gravarAlteracaoPessoa(pessoa)) {
+                        JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!");
+                        // chamar o painel da pessoa   
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Erro ao gravar alteração do produto!");
+                    }
                 } else {
-                    JOptionPane.showMessageDialog(null, "Erro ao gravar alteração do produto!");
+                    if (pessoadb.gravarInsercaoPessoa(pessoa)) {
+                        // chamar o painel da pessoa                    
+                        JOptionPane.showMessageDialog(null, "Cadastro inserido com sucesso!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Erro ao inserir produto!");
+                    }
                 }
             } else {
-                if(pessoadb.gravarInsercaoPessoa(pessoa)){
-                    // chamar o painel da pessoa                    
-                    JOptionPane.showMessageDialog(null, "Cadastro inserido com sucesso!");                    
-                } else {
-                    JOptionPane.showMessageDialog(null, "Erro ao inserir produto!");
-                }
+                JOptionPane.showMessageDialog(null, "Existem campos nao preenchidos!");
             }
+
         } else {
-            JOptionPane.showMessageDialog(null, "Existem campos nao preenchidos!");
-        }        
-        
-        
-        
-        
-        
-        
-//        //Apos ter sido cadastrado com sucesso, abre o painel da pessoa fisica
-//        PainelPessoaFisica confirmarFisico = new PainelPessoaFisica();
-//        confirmarFisico.setVisible(true);
-//        dispose();
+            JOptionPane.showMessageDialog(null, "E-mail ou senha não são iguais!!");
+        }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 
     private void edtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtNomeActionPerformed

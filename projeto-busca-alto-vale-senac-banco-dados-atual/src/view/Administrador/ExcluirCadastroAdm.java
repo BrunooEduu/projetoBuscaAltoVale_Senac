@@ -156,26 +156,26 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-         String pescpfcnpj = edtCpfCnpj.getText();
+        String pescpfcnpj = edtCpfCnpj.getText();
         
         ModelPessoa pessoaBanco = pessoadb.getPessoa(pescpfcnpj);
         
         if (pessoadb.procurarPessoa(pescpfcnpj)) {
-        if (pessoaBanco.getCpfcnpj() > 0) {
-            if (pessoadb.excluirPessoa(edtCpfCnpj)) {
-                    JOptionPane.showMessageDialog(null, "Produto excluído com sucesso!");
+            if (pessoaBanco.getCpfcnpj() > 0) {
+                if (pessoadb.excluirPessoa(edtCpfCnpj)) {
+                        JOptionPane.showMessageDialog(null, "Produto excluído com sucesso!");
 
-//                   limpaCampos();
-//
-//                   habilitaCampos(false);
+    //                   limpaCampos();
+    //
+    //                   habilitaCampos(false);
 
-                     edtCpfCnpj.requestFocus();
-                
-            } else {
-            JOptionPane.showMessageDialog(null, "Não existe pessoa/empresa cadastrada com este cpf/cnpj!");  
-            
+                         edtCpfCnpj.requestFocus();
+
+                } else {
+                JOptionPane.showMessageDialog(null, "Não existe pessoa/empresa cadastrada com este cpf/cnpj!");  
+
+                }
             }
-        }
         }
     }//GEN-LAST:event_btnConfirmarActionPerformed
 

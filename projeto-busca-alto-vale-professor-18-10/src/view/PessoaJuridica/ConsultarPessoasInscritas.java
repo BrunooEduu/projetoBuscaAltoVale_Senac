@@ -16,10 +16,17 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
      */
     public ConsultarPessoasInscritas() {
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);        
+    }
+
+    @Override
+    public void setVisible(boolean b) {
+        
         // lista ao abrir a tela
         listarTodosRegistros();
-    }
+        
+        super.setVisible(b);
+    }    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,6 +44,7 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
         btnSair = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
         jLabel16 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(51, 51, 255));
@@ -78,6 +86,13 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
         jLabel16.setForeground(new java.awt.Color(51, 51, 255));
         jLabel16.setText("Busca Job's");
 
+        jButton1.setText("Pesquisar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,8 +106,10 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
                                 .addComponent(jLabel1)
                                 .addGap(290, 290, 290))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addGap(53, 53, 53)
                                 .addComponent(btnVoltar)
-                                .addGap(32, 32, 32)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnSair))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
@@ -113,7 +130,8 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair)
-                    .addComponent(btnVoltar))
+                    .addComponent(btnVoltar)
+                    .addComponent(jButton1))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 372, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
@@ -132,6 +150,10 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        listarTodosRegistros();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,6 +192,7 @@ public class ConsultarPessoasInscritas extends ViewConsultaPadrao {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;

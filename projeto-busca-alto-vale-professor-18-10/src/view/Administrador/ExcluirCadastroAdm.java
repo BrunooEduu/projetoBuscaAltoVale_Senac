@@ -1,15 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.Administrador;
+
+import controller.ControllerPessoaDB;
+import javax.swing.JOptionPane;
+import model.ModelPessoa;
+import view.ExcluirCadastroPadrao;
 
 /**
  *
  * @author bruno.sasse
  */
-public class ExcluirCadastroAdm extends javax.swing.JFrame {
+public class ExcluirCadastroAdm extends ExcluirCadastroPadrao {
 
     /**
      * Creates new form ConsultaCadastroAdm
@@ -35,7 +35,7 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        edtCpfOuCnpj = new javax.swing.JTextField();
+        edtCpfCnpj = new javax.swing.JTextField();
         btnConfirmar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
@@ -64,13 +64,18 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setText("Digite o CPF ou CNPJ ");
 
-        edtCpfOuCnpj.addActionListener(new java.awt.event.ActionListener() {
+        edtCpfCnpj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtCpfOuCnpjActionPerformed(evt);
+                edtCpfCnpjActionPerformed(evt);
             }
         });
 
         btnConfirmar.setText("Confirmar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -97,7 +102,7 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(edtCpfOuCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edtCpfCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -120,7 +125,7 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(edtCpfOuCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edtCpfCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnConfirmar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,15 +140,24 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void edtCpfOuCnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCpfOuCnpjActionPerformed
+    private void edtCpfCnpjActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtCpfCnpjActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtCpfOuCnpjActionPerformed
+    }//GEN-LAST:event_edtCpfCnpjActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         PainelAdministrador voltarPainelAdministrador = new PainelAdministrador();
         voltarPainelAdministrador.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        String pescpfcnpj = edtCpfCnpj.getText();        
+        
+        if(excluiCadastro(pescpfcnpj)){
+            limpaCampos();
+            edtCpfCnpj.requestFocus();
+        }
+    }//GEN-LAST:event_btnConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,7 +198,7 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnConfirmar;
-    private javax.swing.JTextField edtCpfOuCnpj;
+    private javax.swing.JTextField edtCpfCnpj;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
@@ -194,4 +208,8 @@ public class ExcluirCadastroAdm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    private void limpaCampos() {
+        edtCpfCnpj.setText("");
+    }
 }

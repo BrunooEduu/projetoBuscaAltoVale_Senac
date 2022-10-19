@@ -145,8 +145,10 @@ public class PainelPessoaJuridica extends PainelPadrao {
 
     private void btnConsultarPessoasInscritasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarPessoasInscritasActionPerformed
         ConsultarPessoasInscritas consultarPessoasInscritas = new ConsultarPessoasInscritas();
+        
         // Seta o codigo da pessoa logada no sistema
         consultarPessoasInscritas.setCodigoPessoaLogada(this.getCodigoPessoaLogada());
+        
         consultarPessoasInscritas.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnConsultarPessoasInscritasActionPerformed

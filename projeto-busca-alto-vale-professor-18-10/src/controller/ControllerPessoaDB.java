@@ -12,6 +12,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.ModelPessoa;
+import model.ModelVagasEmpresa;
 import view.Conexao;
 
 public class ControllerPessoaDB extends ControllerDBPadrao {
@@ -61,7 +62,7 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
         return listaDados;
     }
 
-    public boolean excluirProduto(int codigoProduto) {
+    public boolean excluirPessoa(int codigoPessoa) {
         Connection conn = null;
         Statement stmt = null;
         PreparedStatement pstmt = null;
@@ -69,8 +70,8 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
         try {
             conn = Conexao.getConexao();
             stmt = conn.createStatement();
-            pstmt = conn.prepareStatement("delete from tbproduto where procodigo = ?");
-            pstmt.setInt(1, codigoProduto);
+            pstmt = conn.prepareStatement("delete from tbpessoa where pescodigo = ?");
+            pstmt.setInt(1, codigoPessoa);
             pstmt.executeUpdate();
             executou = true;
         } catch (SQLException erro) {
@@ -234,9 +235,9 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
             conn = Conexao.getConexao();
             stmt = conn.createStatement();
             rs = stmt.executeQuery(" select tbpessoa.* "
-                    + " from tbvagasempresa "
+                    + "       from tbvagasempresa "
                     + " inner join tbpessoa on (tbpessoa.pescodigo = tbvagasempresa.pescodigo)"
-                    + " where tbpessoa.pescodigo = " + pescodigo);
+                    + "      where tbpessoa.pescodigo = " + pescodigo);
             while (rs.next()) {
                 int codigo = rs.getInt("pescodigo");
                 String nome = rs.getString("pesnome");
@@ -313,4 +314,43 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
         }
         return pessoaBancoDados;
     }
+ 
+    public ArrayList<ModelVagasEmpresa> getVagasEmpresa() {
+        String sqlTodos = "	      select tbpessoa.pescodigo,\n" +
+                            "	  	     tbpessoa.pesnome,\n" +
+                            "	  	     tbvagas.vagcodigo,\n" +
+                            "	  	     tbvagas.vagnome,\n" +
+                            "	  	     tbvagas.vagdescricao\n" +
+                            "        from tbvagas \n" +
+                            "  inner join tbpessoa on (tbpessoa.pescodigo = tbvagas.pescodigo)\n" +
+                            "       where tbpessoa.pestipo = 2 -- deve listar apenas empresa";
+        
+    
+        ArrayList listaDados = new ArrayList();
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            conn = Conexao.getConexao();
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sqlTodos);
+            while (rs.next()) {
+                int codigopessoa = rs.getInt("pescodigo");
+                String nomeEmpresa = rs.getString("pesnome");
+                int vagcodigo = rs.getInt("vagcodigo");
+                String vagnome = rs.getString("vagnome");
+                String vagdescricao = rs.getString("vagdescricao");
+                
+                ModelVagasEmpresa vagasEmpresa = new ModelVagasEmpresa(vagcodigo, codigopessoa, vagnome,vagdescricao, nomeEmpresa);
+                
+                listaDados.add(vagasEmpresa);
+            }
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro no sql, getTodos():\n" + erro.getMessage());
+        } finally {
+            Conexao.closeAll(conn);
+        }
+        return listaDados;
+    }
+
 }

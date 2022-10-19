@@ -30,7 +30,5 @@ public class ControllerDBPadrao {
             Conexao.closeAll(conn);
         }
         return codigo;
-    }    
-    
-    
+    }
 }

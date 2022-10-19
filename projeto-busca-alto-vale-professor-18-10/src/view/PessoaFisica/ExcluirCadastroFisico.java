@@ -1,15 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package view.PessoaFisica;
+
+import view.ExcluirCadastroPadrao;
 
 /**
  *
  * @author guilherme.schroder
  */
-public class ExcluirCadastroFisico extends javax.swing.JFrame {
+public class ExcluirCadastroFisico extends ExcluirCadastroPadrao {
 
     /**
      * Creates new form AlterarCadastroClientes
@@ -31,7 +29,7 @@ public class ExcluirCadastroFisico extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        edtCpf = new javax.swing.JTextField();
+        edtCpfCnpj = new javax.swing.JTextField();
         btnVoltar = new javax.swing.JButton();
         btnConfirmar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -54,6 +52,11 @@ public class ExcluirCadastroFisico extends javax.swing.JFrame {
         });
 
         btnConfirmar.setText("Confirmar");
+        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 255));
@@ -67,7 +70,7 @@ public class ExcluirCadastroFisico extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(edtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtCpfCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -94,7 +97,7 @@ public class ExcluirCadastroFisico extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edtCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edtCpfCnpj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
@@ -111,6 +114,19 @@ public class ExcluirCadastroFisico extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnVoltarActionPerformed
 
+    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+        String pescpfcnpj = edtCpfCnpj.getText();        
+        
+        if(excluiCadastro(pescpfcnpj)){
+            limpaCampos();
+            edtCpfCnpj.requestFocus();
+        }
+    }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void limpaCampos() {
+        edtCpfCnpj.setText("");
+    }
+     
     /**
      * @param args the command line arguments
      */
@@ -150,7 +166,7 @@ public class ExcluirCadastroFisico extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfirmar;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JTextField edtCpf;
+    private javax.swing.JTextField edtCpfCnpj;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
