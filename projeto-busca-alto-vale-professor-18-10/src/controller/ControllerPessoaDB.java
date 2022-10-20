@@ -123,7 +123,7 @@ public class ControllerPessoaDB extends ControllerDBPadrao {
             conn = Conexao.getConexao();
             stmt = conn.createStatement();
             pstmt = conn.prepareStatement(" update public.tbpessoa set "
-                    + " pesnomesass=?, "
+                    + " pesnome=?, "
                     + " pescpfcnpj=?, "
                     + " pessenha=?, "
                     + " pestelefone=?, "

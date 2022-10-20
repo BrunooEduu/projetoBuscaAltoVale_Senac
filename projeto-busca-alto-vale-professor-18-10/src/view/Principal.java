@@ -42,7 +42,6 @@ public class Principal extends javax.swing.JFrame {
         btnCadastrarFisico = new javax.swing.JRadioButtonMenuItem();
         btnLoginAdministrador = new javax.swing.JMenu();
         btnSair = new javax.swing.JMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -112,11 +111,6 @@ public class Principal extends javax.swing.JFrame {
                 btnSairMousePressed(evt);
             }
         });
-
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("oi");
-        btnSair.add(jRadioButtonMenuItem1);
-
         jMenuBar1.add(btnSair);
 
         setJMenuBar(jMenuBar1);
@@ -205,6 +199,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

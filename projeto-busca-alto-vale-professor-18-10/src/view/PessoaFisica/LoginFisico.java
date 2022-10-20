@@ -40,13 +40,11 @@ public class LoginFisico extends LoginPadrao {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         edtEmail.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        edtEmail.setText("joao@email.com");
         edtEmail.setToolTipText("");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Senha:");
 
-        edtSenha.setText("123");
         edtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edtSenhaActionPerformed(evt);

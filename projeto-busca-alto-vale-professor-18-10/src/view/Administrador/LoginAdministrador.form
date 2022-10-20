@@ -130,9 +130,6 @@
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="edtSenha">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="123"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="edtSenhaActionPerformed"/>
           </Events>
@@ -160,7 +157,6 @@
         <Component class="javax.swing.JTextField" name="edtEmail">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="2"/>
-            <Property name="text" type="java.lang.String" value="amanda@email.com"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>

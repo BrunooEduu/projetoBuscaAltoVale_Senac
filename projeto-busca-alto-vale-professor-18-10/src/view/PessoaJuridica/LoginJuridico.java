@@ -39,7 +39,6 @@ public class LoginJuridico extends LoginPadrao {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        edtSenha.setText("123");
         edtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edtSenhaActionPerformed(evt);
@@ -80,7 +79,6 @@ public class LoginJuridico extends LoginPadrao {
         jLabel2.setText("E-mail:");
 
         edtEmail.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        edtEmail.setText("bruninho@email.com");
         edtEmail.setToolTipText("");
         edtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

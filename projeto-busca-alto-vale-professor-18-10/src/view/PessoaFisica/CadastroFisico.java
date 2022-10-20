@@ -84,13 +84,13 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         btnSair = new javax.swing.JButton();
         edtCpfcnpj = new javax.swing.JTextField();
         edtSenha = new javax.swing.JPasswordField();
-        edtConfirmarSenhaFisico = new javax.swing.JPasswordField();
+        edtConfirmaSenha = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         edtTelefone = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        edtConfirmaEmailFisico = new javax.swing.JTextField();
+        edtConfirmaEmail = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         edtCidade = new javax.swing.JComboBox<>();
         jSeparator2 = new javax.swing.JSeparator();
@@ -166,9 +166,9 @@ public class CadastroFisico extends CadastroPessoaPadrao {
             }
         });
 
-        edtConfirmarSenhaFisico.addActionListener(new java.awt.event.ActionListener() {
+        edtConfirmaSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtConfirmarSenhaFisicoActionPerformed(evt);
+                edtConfirmaSenhaActionPerformed(evt);
             }
         });
 
@@ -194,9 +194,9 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         jLabel10.setForeground(new java.awt.Color(0, 51, 102));
         jLabel10.setText("Senha:");
 
-        edtConfirmaEmailFisico.addActionListener(new java.awt.event.ActionListener() {
+        edtConfirmaEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                edtConfirmaEmailFisicoActionPerformed(evt);
+                edtConfirmaEmailActionPerformed(evt);
             }
         });
 
@@ -287,9 +287,9 @@ public class CadastroFisico extends CadastroPessoaPadrao {
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(edtConfirmaEmailFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(edtConfirmaEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(65, 65, 65)
-                        .addComponent(edtConfirmarSenhaFisico, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(edtConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(503, 503, 503)
                         .addComponent(btnConfirmar)
@@ -371,8 +371,8 @@ public class CadastroFisico extends CadastroPessoaPadrao {
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edtConfirmaEmailFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(edtConfirmarSenhaFisico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edtConfirmaEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edtConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -388,9 +388,9 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void edtConfirmarSenhaFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtConfirmarSenhaFisicoActionPerformed
+    private void edtConfirmaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtConfirmaSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtConfirmarSenhaFisicoActionPerformed
+    }//GEN-LAST:event_edtConfirmaSenhaActionPerformed
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         Principal voltarPrincipal = new Principal();
@@ -404,10 +404,10 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         String cpfcnpj = edtCpfcnpj.getText();
 
         String email = edtEmail.getText();
-        String emailConfirma = edtConfirmaEmailFisico.getText();
+        String emailConfirma = edtConfirmaEmail.getText();
 
         String senha = edtSenha.getText();
-        String senhaConfirma = edtConfirmarSenhaFisico.getText();
+        String senhaConfirma = edtConfirmaSenha.getText();
 
         String telefone = edtTelefone.getText();
         String cidade = edtCidade.getSelectedItem().toString();
@@ -429,16 +429,23 @@ public class CadastroFisico extends CadastroPessoaPadrao {
                 if (pessoaBanco.getCodigo() > 0) {
                     if (pessoadb.gravarAlteracaoPessoa(pessoa)) {
                         JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!");
-                        // chamar o painel da pessoa   
+                        // chamar o painel da pessoa  
+                        PainelPessoaFisica painelPessoa = new PainelPessoaFisica();
+                        painelPessoa.setVisible(true);
+                        dispose();
                     } else {
-                        JOptionPane.showMessageDialog(null, "Erro ao gravar alteração do produto!");
+                        JOptionPane.showMessageDialog(null, "Erro ao gravar alteração do cadastro!");
                     }
                 } else {
                     if (pessoadb.gravarInsercaoPessoa(pessoa)) {
-                        // chamar o painel da pessoa                    
+                        // chamar o painel Principal                    
                         JOptionPane.showMessageDialog(null, "Cadastro inserido com sucesso!");
+                        Principal voltarPrincipal = new Principal();
+                        voltarPrincipal.setVisible(true);
+                        dispose();
+                        
                     } else {
-                        JOptionPane.showMessageDialog(null, "Erro ao inserir produto!");
+                        JOptionPane.showMessageDialog(null, "Erro ao inserir cadastro!");
                     }
                 }
             } else {
@@ -458,9 +465,9 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         // TODO add your handling code here:
     }//GEN-LAST:event_edtCidadeActionPerformed
 
-    private void edtConfirmaEmailFisicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtConfirmaEmailFisicoActionPerformed
+    private void edtConfirmaEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtConfirmaEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_edtConfirmaEmailFisicoActionPerformed
+    }//GEN-LAST:event_edtConfirmaEmailActionPerformed
 
     private void edtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edtTelefoneActionPerformed
         // TODO add your handling code here:
@@ -515,8 +522,8 @@ public class CadastroFisico extends CadastroPessoaPadrao {
     private javax.swing.JButton btnSair;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JComboBox<String> edtCidade;
-    private javax.swing.JTextField edtConfirmaEmailFisico;
-    private javax.swing.JPasswordField edtConfirmarSenhaFisico;
+    private javax.swing.JTextField edtConfirmaEmail;
+    private javax.swing.JPasswordField edtConfirmaSenha;
     private javax.swing.JTextField edtCpfcnpj;
     private javax.swing.JTextField edtEmail;
     private javax.swing.JComboBox<String> edtEstado;
@@ -560,6 +567,8 @@ public class CadastroFisico extends CadastroPessoaPadrao {
         edtEstado.setSelectedItem(this.getPessoa().getEstado());
         edtEmail.setText(this.getPessoa().getEmail());
         edtSenha.setText(this.getPessoa().getSenha());
+        edtConfirmaEmail.setText(this.getPessoa().getEmail());
+        edtConfirmaSenha.setText(this.getPessoa().getSenha());
     }
  }
 

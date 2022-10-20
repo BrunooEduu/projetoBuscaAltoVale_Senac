@@ -50,7 +50,6 @@ public class LoginAdministrador extends LoginPadrao {
             }
         });
 
-        edtSenha.setText("123");
         edtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 edtSenhaActionPerformed(evt);
@@ -66,7 +65,6 @@ public class LoginAdministrador extends LoginPadrao {
         jLabel2.setText("E-mail Administrador:");
 
         edtEmail.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        edtEmail.setText("amanda@email.com");
         edtEmail.setToolTipText("");
         edtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

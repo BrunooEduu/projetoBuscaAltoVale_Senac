@@ -399,7 +399,10 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
             if (pessoaBanco.getCodigo() > 0) {
                 if(pessoadb.gravarAlteracaoPessoa(pessoa)){
                     JOptionPane.showMessageDialog(null, "Cadastro alterado com sucesso!"); 
-                     // chamar o painel da pessoa   
+                     // chamar o painel da pessoa
+                     PainelPessoaJuridica painelJuridico = new PainelPessoaJuridica();
+                     painelJuridico.setVisible(true);
+                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Erro ao gravar alteração do produto!");
                 }
@@ -407,8 +410,8 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
                 if(pessoadb.gravarInsercaoPessoa(pessoa)){
                     // chamar o painel da pessoa 
                     JOptionPane.showMessageDialog(null, "Cadastro inserido com sucesso!");
-                    PainelPessoaJuridica confirmarJuridico = new PainelPessoaJuridica();
-                    confirmarJuridico.setVisible(true);
+                    Principal voltarPrincipal = new Principal();
+                    voltarPrincipal.setVisible(true);
                     dispose();
                 } else {
                     JOptionPane.showMessageDialog(null, "Erro ao inserir produto!");
@@ -517,6 +520,8 @@ public class CadastroJuridico extends CadastroPessoaPadrao {
         edtEstado.setSelectedItem(this.getPessoa().getEstado());
         edtEmail.setText(this.getPessoa().getEmail());
         edtSenha.setText(this.getPessoa().getSenha());
+        edtConfirmaEmail.setText(this.getPessoa().getEmail());
+        edtConfirmaSenha.setText(this.getPessoa().getSenha());
     }
         
     private boolean validaCamposVazios(){
